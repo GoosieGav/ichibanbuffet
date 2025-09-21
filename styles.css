@@ -115,8 +115,11 @@ body {
 }
 
 @media (min-width: 961px) {
-  .visit { grid-template-columns: 1fr 1fr; }
+  .visit { grid-template-columns: 1.1fr 1.2fr; }
   .visit__brand { display: flex; justify-content: flex-end; align-items: stretch; }
+  .visit__content { display: flex; flex-direction: column; justify-content: center; }
+  .visit__content .card__title { font-size: 32px; }
+  .visit__content p { font-size: 20px; }
 }
 
 .cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
