@@ -36,7 +36,7 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 8px;
+  padding: 6px;
   border-radius: 12px;
   background: rgba(255, 255, 255, 0.1);
   border: 2px solid rgba(255, 255, 255, 0.1);
@@ -62,7 +62,7 @@ body {
 }
 
 .btn-logo__image {
-  height: 32px;
+  height: 42px;
   width: auto;
   object-fit: contain;
   display: block;
@@ -70,12 +70,12 @@ body {
 
 /* Topbar logo buttons */
 .topbar .btn-logo {
-  padding: 6px;
+  padding: 4px;
   border-radius: 8px;
 }
 
 .topbar .btn-logo__image {
-  height: 24px;
+  height: 32px;
 }
 
 /* Header */
@@ -156,7 +156,7 @@ body {
 /* Hero logo buttons */
 .btn-logo--ubereats-hero, 
 .btn-logo--doordash-hero {
-  padding: 16px;
+  padding: 12px;
   border-radius: 16px;
   background: rgba(255, 255, 255, 0.15);
   border: 3px solid rgba(255, 255, 255, 0.15);
@@ -175,7 +175,7 @@ body {
 }
 
 .btn-logo__image--hero {
-  height: 48px;
+  height: 56px;
 }
 
 /* Sections */
@@ -294,16 +294,16 @@ body {
 /* Tablet and small desktop */
 @media (max-width: 768px) and (min-width: 641px) {
   .topbar__right { gap: 6px; }
-  .topbar .btn-logo { padding: 5px; }
-  .topbar .btn-logo__image { height: 22px; }
+  .topbar .btn-logo { padding: 3px; }
+  .topbar .btn-logo__image { height: 28px; }
   .hero__delivery-buttons { flex-direction: row; justify-content: center; flex-wrap: wrap; }
   .btn-logo--ubereats-hero, .btn-logo--doordash-hero { 
     flex: 1; 
     min-width: 120px; 
     max-width: 160px; 
-    padding: 12px; 
+    padding: 10px; 
   }
-  .btn-logo__image--hero { height: 40px; }
+  .btn-logo__image--hero { height: 48px; }
 }
 
 /* Small phones */
@@ -318,17 +318,17 @@ body {
   .btn { padding: 12px 16px; }
   .topbar .container { padding: 6px 16px; flex-wrap: wrap; gap: 6px; }
   .topbar__right { flex-wrap: wrap; gap: 6px; }
-  .topbar .btn-logo { padding: 4px; }
-  .topbar .btn-logo__image { height: 20px; }
+  .topbar .btn-logo { padding: 3px; }
+  .topbar .btn-logo__image { height: 26px; }
   /* Hero delivery mobile adjustments */
   .hero__delivery { margin-top: 20px; }
   .hero__delivery-text { font-size: 15px; text-align: center; }
   .hero__delivery-buttons { flex-direction: column; align-items: center; gap: 12px; }
   .btn-logo--ubereats-hero, .btn-logo--doordash-hero { 
     width: auto; 
-    padding: 10px; 
+    padding: 8px; 
   }
-  .btn-logo__image--hero { height: 36px; }
+  .btn-logo__image--hero { height: 44px; }
   /* Menu section mobile adjustments */
   .menu-section { margin-bottom: 32px; }
   .menu-section__title { font-size: 20px; margin-bottom: 20px; }
