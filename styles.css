@@ -325,9 +325,11 @@ body {
   .hero__delivery-text { font-size: 15px; text-align: center; }
   .hero__delivery-buttons { flex-direction: row; justify-content: center; gap: 12px; flex-wrap: wrap; }
   .btn-logo--ubereats-hero, .btn-logo--doordash-hero { 
-    flex: 1; 
-    max-width: 140px; 
-    padding: 8px; 
+    width: auto; 
+    min-width: 100px;
+    max-width: 120px; 
+    padding: 10px 12px; 
+    border-radius: 14px;
   }
   .btn-logo__image--hero { height: 44px; }
   /* Menu section mobile adjustments */
