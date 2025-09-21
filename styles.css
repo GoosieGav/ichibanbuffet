@@ -104,10 +104,10 @@ body {
 .card { background: #101010; border: 1px solid #1e1e1e; border-radius: var(--radius); padding: 22px; box-shadow: var(--shadow); }
 .card__title { margin-top: 0; }
 /* Visit logo */
-.visit { display: grid; grid-template-columns: 1fr; align-items: start; gap: 24px; }
-.visit__content { }
+.visit { display: grid; grid-template-columns: 1fr; align-items: stretch; gap: 24px; }
+.visit__content { display: flex; flex-direction: column; justify-content: center; }
 .visit__brand { display: none; }
-.visit__image { display: block; width: 100%; height: auto; object-fit: cover; border-radius: 12px; border: 1px solid #1f1f1f; box-shadow: var(--shadow); }
+.visit__image { display: block; width: 100%; height: 100%; min-height: 200px; object-fit: cover; border-radius: 12px; border: 1px solid #1f1f1f; box-shadow: var(--shadow); }
 
 @media (max-width: 960px) {
   .visit { grid-template-columns: 1fr; }
@@ -115,9 +115,10 @@ body {
 }
 
 @media (min-width: 961px) {
-  .visit { grid-template-columns: 1fr 1fr; }
+  .visit { grid-template-columns: 1fr 1fr; align-items: stretch; }
   .visit__brand { display: flex; justify-content: flex-end; align-items: stretch; }
   .visit__content { display: flex; flex-direction: column; justify-content: center; }
+  .visit__image { height: 100%; min-height: 240px; }
 }
 
 .cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
