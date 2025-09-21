@@ -107,12 +107,16 @@ body {
 .visit { display: grid; grid-template-columns: 1fr; align-items: start; gap: 24px; }
 .visit__content { }
 .visit__brand { display: none; }
-.visit__logo { display: none; }
-.visit__logo--right { display: none; }
+.visit__image { display: block; max-width: 460px; width: 100%; height: auto; border-radius: 12px; border: 1px solid #1f1f1f; box-shadow: var(--shadow); }
 
 @media (max-width: 960px) {
   .visit { grid-template-columns: 1fr; }
   .visit__brand { justify-content: flex-start; }
+}
+
+@media (min-width: 961px) {
+  .visit { grid-template-columns: 1fr 1fr; }
+  .visit__brand { display: flex; justify-content: flex-end; align-items: center; }
 }
 
 .cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
