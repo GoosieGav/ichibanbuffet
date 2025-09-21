@@ -31,42 +31,50 @@ body {
 .topbar a { color: var(--color-muted); text-decoration: none; }
 .topbar .divider { opacity: 0.6; margin: 0 8px; }
 .topbar__right { display: flex; align-items: center; gap: 8px; }
-.topbar .btn--delivery { 
-  padding: 4px 8px; 
-  font-size: 12px; 
-  font-weight: 600; 
-  border-radius: 8px; 
-  text-transform: uppercase; 
-  letter-spacing: 0.3px; 
-  display: flex;
+/* Logo-only delivery buttons */
+.btn-logo {
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-}
-.topbar .btn--ubereats { 
-  background: transparent; 
-  border: 1px solid rgba(255,255,255,0.1); 
-}
-.topbar .btn--ubereats:hover { 
-  background: rgba(0, 212, 170, 0.1); 
-  border-color: rgba(0, 212, 170, 0.3); 
-}
-.topbar .btn--doordash { 
-  background: transparent; 
-  border: 1px solid rgba(255,255,255,0.1); 
-}
-.topbar .btn--doordash:hover { 
-  background: rgba(255, 48, 8, 0.1); 
-  border-color: rgba(255, 48, 8, 0.3); 
+  padding: 8px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  text-decoration: none;
 }
 
-/* Logo styles for topbar */
-.btn__logo { 
-  height: 24px; 
-  width: auto; 
-  object-fit: contain; 
+.btn-logo:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
 }
-.topbar .btn__logo { 
-  height: 20px; 
+
+.btn-logo--ubereats:hover {
+  border-color: rgba(0, 212, 170, 0.5);
+  background: rgba(0, 212, 170, 0.1);
+}
+
+.btn-logo--doordash:hover {
+  border-color: rgba(255, 48, 8, 0.5);
+  background: rgba(255, 48, 8, 0.1);
+}
+
+.btn-logo__image {
+  height: 32px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* Topbar logo buttons */
+.topbar .btn-logo {
+  padding: 6px;
+  border-radius: 8px;
+}
+
+.topbar .btn-logo__image {
+  height: 24px;
 }
 
 /* Header */
@@ -144,46 +152,29 @@ body {
   gap: 12px; 
   flex-wrap: wrap; 
 }
-.btn--ubereats-hero { 
-  background: rgba(0, 212, 170, 0.1); 
-  color: #fff; 
-  border: 2px solid rgba(0, 212, 170, 0.3); 
-  font-weight: 700; 
-  padding: 14px 20px; 
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  box-shadow: 0 4px 12px rgba(0, 212, 170, 0.15); 
-}
-.btn--ubereats-hero:hover { 
-  background: rgba(0, 212, 170, 0.2); 
-  border-color: rgba(0, 212, 170, 0.5); 
-  transform: translateY(-1px); 
-  box-shadow: 0 6px 16px rgba(0, 212, 170, 0.25); 
-}
-.btn--doordash-hero { 
-  background: rgba(255, 48, 8, 0.1); 
-  color: #fff; 
-  border: 2px solid rgba(255, 48, 8, 0.3); 
-  font-weight: 700; 
-  padding: 14px 20px; 
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  box-shadow: 0 4px 12px rgba(255, 48, 8, 0.15); 
-}
-.btn--doordash-hero:hover { 
-  background: rgba(255, 48, 8, 0.2); 
-  border-color: rgba(255, 48, 8, 0.5); 
-  transform: translateY(-1px); 
-  box-shadow: 0 6px 16px rgba(255, 48, 8, 0.25); 
+/* Hero logo buttons */
+.btn-logo--ubereats-hero, 
+.btn-logo--doordash-hero {
+  padding: 16px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 3px solid rgba(255, 255, 255, 0.15);
 }
 
-/* Logo styles for hero buttons */
-.btn__logo--hero { 
-  height: 32px; 
-  width: auto; 
-  object-fit: contain; 
+.btn-logo--ubereats-hero:hover {
+  background: rgba(0, 212, 170, 0.15);
+  border-color: rgba(0, 212, 170, 0.6);
+  box-shadow: 0 12px 35px rgba(0, 212, 170, 0.3);
+}
+
+.btn-logo--doordash-hero:hover {
+  background: rgba(255, 48, 8, 0.15);
+  border-color: rgba(255, 48, 8, 0.6);
+  box-shadow: 0 12px 35px rgba(255, 48, 8, 0.3);
+}
+
+.btn-logo__image--hero {
+  height: 48px;
 }
 
 /* Sections */
@@ -302,11 +293,16 @@ body {
 /* Tablet and small desktop */
 @media (max-width: 768px) and (min-width: 641px) {
   .topbar__right { gap: 6px; }
-  .topbar .btn--delivery { padding: 6px 12px; }
-  .topbar .btn__logo { height: 18px; }
+  .topbar .btn-logo { padding: 5px; }
+  .topbar .btn-logo__image { height: 22px; }
   .hero__delivery-buttons { flex-direction: row; justify-content: center; flex-wrap: wrap; }
-  .btn--ubereats-hero, .btn--doordash-hero { flex: 1; min-width: 180px; max-width: 220px; gap: 10px; }
-  .btn__logo--hero { height: 30px; }
+  .btn-logo--ubereats-hero, .btn-logo--doordash-hero { 
+    flex: 1; 
+    min-width: 120px; 
+    max-width: 160px; 
+    padding: 12px; 
+  }
+  .btn-logo__image--hero { height: 40px; }
 }
 
 /* Small phones */
@@ -321,14 +317,18 @@ body {
   .btn { padding: 12px 16px; }
   .topbar .container { padding: 6px 16px; flex-wrap: wrap; gap: 6px; }
   .topbar__right { flex-wrap: wrap; gap: 6px; }
-  .topbar .btn--delivery { padding: 6px 10px; }
-  .topbar .btn__logo { height: 18px; }
+  .topbar .btn-logo { padding: 4px; }
+  .topbar .btn-logo__image { height: 20px; }
   /* Hero delivery mobile adjustments */
   .hero__delivery { margin-top: 20px; }
   .hero__delivery-text { font-size: 15px; text-align: center; }
-  .hero__delivery-buttons { flex-direction: column; align-items: center; gap: 10px; }
-  .btn--ubereats-hero, .btn--doordash-hero { width: 100%; max-width: 280px; padding: 14px 16px; gap: 10px; }
-  .btn__logo--hero { height: 28px; }
+  .hero__delivery-buttons { flex-direction: column; align-items: center; gap: 12px; }
+  .btn-logo--ubereats-hero, .btn-logo--doordash-hero { 
+    width: 100%; 
+    max-width: 200px; 
+    padding: 14px; 
+  }
+  .btn-logo__image--hero { height: 36px; }
   /* Menu section mobile adjustments */
   .menu-section { margin-bottom: 32px; }
   .menu-section__title { font-size: 20px; margin-bottom: 20px; }
