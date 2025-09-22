@@ -27,94 +27,88 @@ document.addEventListener('click', (e) => {
 const yearEl = document.getElementById('year');
 if (yearEl) yearEl.textContent = String(new Date().getFullYear());
 
-// Gallery Carousel
-class ImageCarousel {
+// Gallery Lightbox
+class GalleryLightbox {
   constructor() {
-    this.track = document.getElementById('carouselTrack');
-    this.prevBtn = document.getElementById('prevBtn');
-    this.nextBtn = document.getElementById('nextBtn');
-    this.dotsContainer = document.getElementById('carouselDots');
-    this.slides = this.track ? this.track.querySelectorAll('.carousel-slide') : [];
+    this.lightbox = document.getElementById('lightbox');
+    this.lightboxImage = document.getElementById('lightboxImage');
+    this.lightboxOverlay = document.getElementById('lightboxOverlay');
+    this.closeBtn = document.getElementById('lightboxClose');
+    this.prevBtn = document.getElementById('lightboxPrev');
+    this.nextBtn = document.getElementById('lightboxNext');
+    this.galleryItems = document.querySelectorAll('.gallery__item');
+    this.images = Array.from(document.querySelectorAll('.gallery__image'));
     this.currentIndex = 0;
     
-    if (this.track && this.slides.length > 0) {
-      this.init();
-    }
+    this.init();
   }
   
   init() {
-    // Create dots
-    this.createDots();
+    // Add click event listeners to gallery items
+    this.galleryItems.forEach((item, index) => {
+      item.addEventListener('click', () => this.openLightbox(index));
+    });
     
-    // Add event listeners
-    this.prevBtn?.addEventListener('click', () => this.prevSlide());
-    this.nextBtn?.addEventListener('click', () => this.nextSlide());
+    // Add event listeners for lightbox controls
+    this.closeBtn?.addEventListener('click', () => this.closeLightbox());
+    this.lightboxOverlay?.addEventListener('click', () => this.closeLightbox());
+    this.prevBtn?.addEventListener('click', () => this.prevImage());
+    this.nextBtn?.addEventListener('click', () => this.nextImage());
     
-    // Auto-play (optional)
-    this.startAutoPlay();
-    
-    // Pause auto-play on hover
-    this.track.addEventListener('mouseenter', () => this.stopAutoPlay());
-    this.track.addEventListener('mouseleave', () => this.startAutoPlay());
-  }
-  
-  createDots() {
-    if (!this.dotsContainer) return;
-    
-    this.slides.forEach((_, index) => {
-      const dot = document.createElement('div');
-      dot.classList.add('carousel-dot');
-      if (index === 0) dot.classList.add('active');
-      
-      dot.addEventListener('click', () => this.goToSlide(index));
-      this.dotsContainer.appendChild(dot);
+    // Add keyboard event listeners
+    document.addEventListener('keydown', (e) => {
+      if (this.lightbox.classList.contains('active')) {
+        switch (e.key) {
+          case 'Escape':
+            this.closeLightbox();
+            break;
+          case 'ArrowLeft':
+            this.prevImage();
+            break;
+          case 'ArrowRight':
+            this.nextImage();
+            break;
+        }
+      }
     });
   }
   
-  updateSlide() {
-    const slideWidth = 100;
-    const translateX = -this.currentIndex * slideWidth;
-    this.track.style.transform = `translateX(${translateX}%)`;
-    
-    // Update dots
-    const dots = this.dotsContainer?.querySelectorAll('.carousel-dot');
-    dots?.forEach((dot, index) => {
-      dot.classList.toggle('active', index === this.currentIndex);
-    });
-  }
-  
-  nextSlide() {
-    this.currentIndex = (this.currentIndex + 1) % this.slides.length;
-    this.updateSlide();
-  }
-  
-  prevSlide() {
-    this.currentIndex = this.currentIndex === 0 ? this.slides.length - 1 : this.currentIndex - 1;
-    this.updateSlide();
-  }
-  
-  goToSlide(index) {
+  openLightbox(index) {
     this.currentIndex = index;
-    this.updateSlide();
+    const img = this.images[index];
+    
+    this.lightboxImage.src = img.src;
+    this.lightboxImage.alt = img.alt;
+    this.lightbox.classList.add('active');
+    
+    // Prevent body scrolling when lightbox is open
+    document.body.style.overflow = 'hidden';
   }
   
-  startAutoPlay() {
-    this.stopAutoPlay(); // Clear any existing interval
-    this.autoPlayInterval = setInterval(() => {
-      this.nextSlide();
-    }, 5000); // Change slide every 5 seconds
+  closeLightbox() {
+    this.lightbox.classList.remove('active');
+    document.body.style.overflow = '';
   }
   
-  stopAutoPlay() {
-    if (this.autoPlayInterval) {
-      clearInterval(this.autoPlayInterval);
-      this.autoPlayInterval = null;
-    }
+  nextImage() {
+    this.currentIndex = (this.currentIndex + 1) % this.images.length;
+    this.updateImage();
+  }
+  
+  prevImage() {
+    this.currentIndex = this.currentIndex === 0 ? this.images.length - 1 : this.currentIndex - 1;
+    this.updateImage();
+  }
+  
+  updateImage() {
+    const img = this.images[this.currentIndex];
+    this.lightboxImage.src = img.src;
+    this.lightboxImage.alt = img.alt;
   }
 }
 
-// Initialize carousel when DOM is loaded
+// Initialize lightbox when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
-  new ImageCarousel();
+  new GalleryLightbox();
 });
 
