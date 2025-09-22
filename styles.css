@@ -620,6 +620,16 @@ h4 { font-size: clamp(1.25rem, 2.5vw, 1.75rem); font-weight: 500; }
   .topbar__right { flex-wrap: wrap; gap: 6px; }
   .topbar .btn-logo { padding: 3px; }
   .topbar .btn-logo__image { height: 26px; }
+  /* Hero delivery mobile adjustments */
+  .hero__delivery { margin-top: 20px; }
+  .hero__delivery-text { font-size: 15px; text-align: center; }
+  .hero__delivery-buttons { flex-direction: column; align-items: center; gap: 12px; }
+  .btn-logo--ubereats-hero, .btn-logo--doordash-hero { 
+    width: 100%; 
+    max-width: 200px; 
+    padding: 14px; 
+  }
+  .btn-logo__image--hero { height: 36px; }
   /* Menu section mobile adjustments */
   .menu-section { margin-bottom: 32px; }
   .menu-section__title { font-size: clamp(1.5rem, 4vw, 2rem); margin-bottom: 20px; }
