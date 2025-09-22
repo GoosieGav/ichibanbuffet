@@ -154,15 +154,15 @@ h4 { font-size: clamp(1.25rem, 2.5vw, 1.75rem); font-weight: 500; }
 .hero__content { padding: 64px 0; }
 .hero__grid { display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 28px; }
 .hero__copy { text-align: center; }
-.hero__title { font-size: clamp(34px, 6vw, 56px); margin: 0 0 10px; font-weight: 700; line-height: 1.2; }
+.hero__title { font-size: clamp(34px, 6vw, 56px); margin: 0 auto 10px; font-weight: 700; line-height: 1.2; }
 .hero__title span { color: var(--color-primary); }
-.hero__brand { display: block; width: clamp(280px, 36vw, 520px); height: auto; margin: 10px 0 18px; filter: drop-shadow(0 8px 26px rgba(0,0,0,0.6)); transform: none; }
-.hero__subtitle { margin: 8px 0 22px; color: var(--color-muted); max-width: 800px; }
+.hero__brand { display: block; width: clamp(280px, 36vw, 520px); height: auto; margin: 10px auto 18px; filter: drop-shadow(0 8px 26px rgba(0,0,0,0.6)); transform: none; }
+.hero__subtitle { margin: 8px auto 22px; color: var(--color-muted); max-width: 800px; }
 .hero__actions { 
   display: flex; 
   gap: 16px; 
   flex-wrap: wrap; 
-  justify-content: flex-start;
+  justify-content: center;
   margin-top: 2rem;
 }
 
@@ -382,6 +382,9 @@ h4 { font-size: clamp(1.25rem, 2.5vw, 1.75rem); font-weight: 500; }
   .nav__menu { position: absolute; top: 100%; right: 20px; background: #0f0f0f; border: 1px solid #1f1f1f; border-radius: 10px; padding: 10px; display: none; flex-direction: column; min-width: 200px; box-shadow: var(--shadow); }
   .nav__menu.show { display: flex; }
   .hero__grid { flex-direction: column; text-align: center; }
+  /* Center About Us and Visit Us content on mobile */
+  .grid--2 > div { text-align: center; }
+  .list { text-align: left; display: inline-block; }
 }
 
 /* Tablet and small desktop */
@@ -401,6 +404,9 @@ h4 { font-size: clamp(1.25rem, 2.5vw, 1.75rem); font-weight: 500; }
   .hero__copy { text-align: center; }
   .hero__actions { flex-direction: column; align-items: center; justify-content: center; gap: 10px; }
   .btn { padding: 12px 16px; }
+  /* Center About Us and Visit Us on small mobile */
+  .grid--2 > div { text-align: center; }
+  .list { text-align: left; display: inline-block; }
   .topbar .container { padding: 6px 16px; flex-wrap: wrap; gap: 6px; }
   .topbar__right { flex-wrap: wrap; gap: 6px; }
   .topbar .btn-logo { padding: 3px; }
