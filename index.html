@@ -44,6 +44,7 @@
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#menu">Menu</a></li>
+            <li><a href="#reviews">Reviews</a></li>
             <li><a href="#gallery">Gallery</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
@@ -276,20 +277,122 @@
       </div>
     </section>
 
+    <!-- Reviews -->
+    <section class="section" id="reviews">
+      <div class="container">
+        <h2 class="section__title">What Our Customers Say</h2>
+        <div class="reviews-grid">
+          <div class="review-card">
+            <div class="review__header">
+              <div class="review__author">
+                <h4 class="review__name">Korina Anton (Kori)</h4>
+                <p class="review__badge">Local Guide • 18 reviews • 31 photos</p>
+                <p class="review__time">8 months ago</p>
+              </div>
+              <div class="review__rating">
+                <div class="stars">★★★★★</div>
+              </div>
+            </div>
+            <div class="review__details">
+              <span class="review__type">Dinner | $10–20</span>
+            </div>
+            <p class="review__text">
+              "The food was absolutely wonderful! I really appreciate how this buffet maintains the classic look and feel of a traditional Chinese buffet. I'd highly recommend this spot to anyone craving delicious Chinese food!"
+            </p>
+            <div class="review__source">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google" class="review__source-logo">
+              <span>Google Review</span>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review__header">
+              <div class="review__author">
+                <h4 class="review__name">Nathan Crain</h4>
+                <p class="review__badge">Local Guide • 413 reviews • 2982 photos</p>
+                <p class="review__time">a month ago</p>
+              </div>
+              <div class="review__rating">
+                <div class="stars">★★★★★</div>
+              </div>
+            </div>
+            <div class="review__details">
+              <span class="review__type">Dinner | $10–20</span>
+            </div>
+            <p class="review__text">
+              "Great buffet with many options including crab legs. Would highly recommend this Chinese buffet for its great variety and taste."
+            </p>
+            <div class="review__source">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google" class="review__source-logo">
+              <span>Google Review</span>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review__header">
+              <div class="review__author">
+                <h4 class="review__name">Dibakar Roy</h4>
+                <p class="review__badge">Local Guide • 78 reviews • 497 photos</p>
+                <p class="review__time">7 months ago</p>
+              </div>
+              <div class="review__rating">
+                <div class="stars">★★★★★</div>
+              </div>
+            </div>
+            <div class="review__details">
+              <span class="review__type">Dine in • Dinner | $10–20</span>
+            </div>
+            <p class="review__text">
+              "The best asian buffet in town. All the items are solid in flavor. We had a great time there"
+            </p>
+            <div class="review__source">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google" class="review__source-logo">
+              <span>Google Review</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Gallery -->
     <section class="section section--dark" id="gallery">
       <div class="container">
         <h2 class="section__title">Gallery</h2>
-        <div class="gallery">
-          <div class="gallery__item">
-            <img src="food_image.png" alt="Delicious Chinese cuisine from Ichiban Buffet" class="gallery__image">
+        <div class="gallery-carousel">
+          <div class="carousel-container">
+            <div class="carousel-track" id="carouselTrack">
+              <div class="carousel-slide">
+                <img src="food_image.png" alt="Delicious Chinese cuisine from Ichiban Buffet" class="carousel-image">
+              </div>
+              <div class="carousel-slide">
+                <img src="crablegs.png" alt="Fresh crab legs at Ichiban Buffet" class="carousel-image">
+              </div>
+              <div class="carousel-slide">
+                <img src="ichian_building.png" alt="Ichiban Buffet restaurant exterior" class="carousel-image">
+              </div>
+              <div class="carousel-slide">
+                <img src="foodimage.png" alt="Variety of dishes at Ichiban Buffet" class="carousel-image">
+              </div>
+              <div class="carousel-slide">
+                <img src="sushiBarimage.png" alt="Fresh sushi bar at Ichiban Buffet" class="carousel-image">
+              </div>
+              <div class="carousel-slide">
+                <img src="buffetbarimage.png" alt="Buffet bar with hot dishes" class="carousel-image">
+              </div>
+              <div class="carousel-slide">
+                <img src="restaurant_image.png" alt="Restaurant dining area" class="carousel-image">
+              </div>
+              <div class="carousel-slide">
+                <img src="plate_image.png" alt="Beautifully plated dishes" class="carousel-image">
+              </div>
+              <div class="carousel-slide">
+                <img src="broccoli.png" alt="Fresh vegetables and sides" class="carousel-image">
+              </div>
+            </div>
+            <button class="carousel-btn carousel-btn--prev" id="prevBtn" aria-label="Previous image">‹</button>
+            <button class="carousel-btn carousel-btn--next" id="nextBtn" aria-label="Next image">›</button>
           </div>
-          <div class="gallery__item">
-            <img src="crablegs.png" alt="Fresh crab legs at Ichiban Buffet" class="gallery__image">
-          </div>
-          <div class="gallery__item">
-            <img src="ichian_building.png" alt="Ichiban Buffet restaurant exterior" class="gallery__image">
-          </div>
+          <div class="carousel-dots" id="carouselDots"></div>
         </div>
       </div>
     </section>
