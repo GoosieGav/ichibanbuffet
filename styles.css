@@ -91,7 +91,7 @@ h4 { font-size: clamp(1.25rem, 2.5vw, 1.75rem); font-weight: 500; }
 
 .btn-logo__image {
   height: 42px;
-  width: auto;
+  width: 42px;
   object-fit: contain;
   display: block;
 }
@@ -104,6 +104,7 @@ h4 { font-size: clamp(1.25rem, 2.5vw, 1.75rem); font-weight: 500; }
 
 .topbar .btn-logo__image {
   height: 32px;
+  width: 32px;
 }
 
 /* Header */
@@ -666,7 +667,7 @@ h4 { font-size: clamp(1.25rem, 2.5vw, 1.75rem); font-weight: 500; }
 @media (max-width: 768px) and (min-width: 641px) {
   .topbar__right { gap: 6px; }
   .topbar .btn-logo { padding: 3px; }
-  .topbar .btn-logo__image { height: 28px; }
+  .topbar .btn-logo__image { height: 28px; width: 28px; }
 }
 
 /* Small phones */
@@ -685,7 +686,7 @@ h4 { font-size: clamp(1.25rem, 2.5vw, 1.75rem); font-weight: 500; }
   .topbar .container { padding: 6px 16px; flex-wrap: wrap; gap: 6px; }
   .topbar__right { flex-wrap: wrap; gap: 6px; }
   .topbar .btn-logo { padding: 3px; }
-  .topbar .btn-logo__image { height: 26px; }
+  .topbar .btn-logo__image { height: 26px; width: 26px; }
   /* Center delivery buttons on mobile */
   .contact__delivery-buttons { justify-content: center; }
   /* Menu section mobile adjustments */
