@@ -398,9 +398,10 @@ h4 { font-size: clamp(1.25rem, 2.5vw, 1.75rem); font-weight: 500; }
   flex: 1;
   overflow-x: auto;
   overflow-y: hidden;
-  scroll-behavior: smooth;
+  scroll-behavior: auto; /* Disabled for custom smooth scrolling */
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none; /* Internet Explorer 10+ */
+  cursor: grab;
 }
 
 .gallery-carousel::-webkit-scrollbar {
@@ -419,8 +420,9 @@ h4 { font-size: clamp(1.25rem, 2.5vw, 1.75rem); font-weight: 500; }
   border-radius: 16px;
   overflow: hidden;
   box-shadow: var(--shadow);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.4s ease;
   cursor: pointer;
+  will-change: transform;
 }
 
 .gallery__item:hover {
@@ -450,24 +452,31 @@ h4 { font-size: clamp(1.25rem, 2.5vw, 1.75rem); font-weight: 500; }
   padding: 12px 16px;
   border-radius: 50%;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   z-index: 2;
   height: 50px;
   width: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.1);
 }
 
 .gallery-nav:hover {
   background: rgba(0, 0, 0, 0.9);
-  transform: scale(1.1);
+  transform: scale(1.15);
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
 }
 
-.gallery-nav:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-  transform: none;
+.gallery-nav:active {
+  transform: scale(1.05);
+  transition-duration: 0.1s;
+}
+
+.gallery-carousel:active {
+  cursor: grabbing;
 }
 
 /* Lightbox */
