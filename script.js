@@ -46,11 +46,16 @@ class GalleryCarousel {
     this.images = Array.from(document.querySelectorAll('.gallery__image'));
     this.currentLightboxIndex = 0;
     this.isAnimating = false; // Prevent rapid clicking
+    this.originalItems = []; // Store original items for infinite loop
+    this.totalOriginalItems = 0;
     
     this.init();
   }
   
   init() {
+    // Setup infinite loop by cloning items
+    this.setupInfiniteLoop();
+    
     // Carousel navigation
     this.prevBtn?.addEventListener('click', () => this.scrollCarousel('prev'));
     this.nextBtn?.addEventListener('click', () => this.scrollCarousel('next'));
@@ -58,9 +63,12 @@ class GalleryCarousel {
     // Add touch/swipe support for mobile
     this.addTouchSupport();
     
-    // Lightbox functionality
-    this.galleryItems.forEach((item, index) => {
-      item.addEventListener('click', () => this.openLightbox(index));
+    // Lightbox functionality - use original items for lightbox
+    this.originalItems.forEach((item, index) => {
+      const allMatchingItems = document.querySelectorAll(`[data-original-index="${index}"]`);
+      allMatchingItems.forEach(matchingItem => {
+        matchingItem.addEventListener('click', () => this.openLightbox(index));
+      });
     });
     
     this.lightboxClose?.addEventListener('click', () => this.closeLightbox());
@@ -86,6 +94,42 @@ class GalleryCarousel {
     });
   }
   
+  setupInfiniteLoop() {
+    if (!this.carousel) return;
+    
+    const track = this.carousel.querySelector('.gallery-track');
+    if (!track) return;
+    
+    // Store original items
+    this.originalItems = Array.from(track.children);
+    this.totalOriginalItems = this.originalItems.length;
+    
+    // Mark original items with data attribute
+    this.originalItems.forEach((item, index) => {
+      item.setAttribute('data-original-index', index);
+    });
+    
+    // Clone first 3 items and append to end
+    const firstItems = this.originalItems.slice(0, 3);
+    firstItems.forEach((item, index) => {
+      const clone = item.cloneNode(true);
+      clone.setAttribute('data-original-index', index);
+      track.appendChild(clone);
+    });
+    
+    // Clone last 3 items and prepend to beginning
+    const lastItems = this.originalItems.slice(-3);
+    lastItems.forEach((item, index) => {
+      const clone = item.cloneNode(true);
+      clone.setAttribute('data-original-index', this.totalOriginalItems - 3 + index);
+      track.insertBefore(clone, track.firstChild);
+    });
+    
+    // Set initial position to show first original item (after the 3 cloned last items)
+    const itemWidth = this.getResponsiveItemWidth();
+    this.carousel.scrollLeft = itemWidth * 3;
+  }
+  
   getResponsiveItemWidth() {
     // Get actual item width based on screen size
     const screenWidth = window.innerWidth;
@@ -107,33 +151,44 @@ class GalleryCarousel {
     this.isAnimating = true;
     
     const itemWidth = this.getResponsiveItemWidth();
-    const containerWidth = this.carousel.clientWidth;
-    const maxScroll = track.scrollWidth - containerWidth;
     const currentScroll = this.carousel.scrollLeft;
     
     let targetScroll;
     
     if (direction === 'next') {
       targetScroll = currentScroll + itemWidth;
-      
-      // If we're at or past the end, loop back to beginning
-      if (targetScroll >= maxScroll) {
-        targetScroll = 0;
-      }
     } else {
       targetScroll = currentScroll - itemWidth;
-      
-      // If we're at or before the beginning, loop to end
-      if (targetScroll <= 0) {
-        targetScroll = maxScroll;
-      }
     }
     
     // Smooth scroll with enhanced easing
-    this.smoothScrollTo(targetScroll);
+    this.smoothScrollTo(targetScroll, direction);
   }
   
-  smoothScrollTo(targetPosition) {
+  checkAndHandleInfiniteLoop(direction) {
+    if (!this.carousel || this.totalOriginalItems === 0) return;
+    
+    const itemWidth = this.getResponsiveItemWidth();
+    const currentScroll = this.carousel.scrollLeft;
+    const track = this.carousel.querySelector('.gallery-track');
+    
+    // Calculate positions
+    const clonedItemsWidth = itemWidth * 3; // 3 cloned items on each side
+    const originalItemsWidth = itemWidth * this.totalOriginalItems;
+    
+    // If we scrolled past the last original item (into the cloned first items)
+    if (currentScroll >= clonedItemsWidth + originalItemsWidth) {
+      // Jump back to the beginning of original items (after the 3 cloned last items)
+      this.carousel.scrollLeft = clonedItemsWidth;
+    }
+    // If we scrolled before the first original item (into the cloned last items)
+    else if (currentScroll < clonedItemsWidth) {
+      // Jump forward to the end of original items (before the 3 cloned first items)
+      this.carousel.scrollLeft = clonedItemsWidth + originalItemsWidth - itemWidth;
+    }
+  }
+  
+  smoothScrollTo(targetPosition, direction) {
     const startPosition = this.carousel.scrollLeft;
     const distance = targetPosition - startPosition;
     
@@ -162,8 +217,13 @@ class GalleryCarousel {
       } else {
         // Ensure we end up exactly at the target position
         this.carousel.scrollLeft = targetPosition;
-        // Re-enable carousel navigation
-        this.isAnimating = false;
+        
+        // Check if we need to handle infinite loop (jump to equivalent position)
+        setTimeout(() => {
+          this.checkAndHandleInfiniteLoop(direction);
+          // Re-enable carousel navigation
+          this.isAnimating = false;
+        }, 50);
       }
     };
     
@@ -230,6 +290,10 @@ class GalleryCarousel {
     
     const handleTouchEnd = () => {
       isDragging = false;
+      // After touch ends, check if we need to handle infinite loop
+      setTimeout(() => {
+        this.checkAndHandleInfiniteLoop();
+      }, 100);
     };
     
     // Add touch event listeners

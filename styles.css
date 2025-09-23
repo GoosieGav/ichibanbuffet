@@ -658,6 +658,8 @@ h4 { font-size: clamp(1.25rem, 2.5vw, 1.75rem); font-weight: 500; }
   /* Center About Us and Visit Us content on mobile */
   .grid--2 > div { text-align: center; }
   .list { text-align: left; display: inline-block; }
+  /* Center delivery buttons on mobile/tablet */
+  .contact__delivery-buttons { justify-content: center; }
 }
 
 /* Tablet and small desktop */
@@ -684,6 +686,8 @@ h4 { font-size: clamp(1.25rem, 2.5vw, 1.75rem); font-weight: 500; }
   .topbar__right { flex-wrap: wrap; gap: 6px; }
   .topbar .btn-logo { padding: 3px; }
   .topbar .btn-logo__image { height: 26px; }
+  /* Center delivery buttons on mobile */
+  .contact__delivery-buttons { justify-content: center; }
   /* Menu section mobile adjustments */
   .menu-section { margin-bottom: 32px; }
   .menu-section__title { font-size: clamp(1.5rem, 4vw, 2rem); margin-bottom: 20px; }
