@@ -27,37 +27,46 @@ document.addEventListener('click', (e) => {
 const yearEl = document.getElementById('year');
 if (yearEl) yearEl.textContent = String(new Date().getFullYear());
 
-// Gallery Lightbox
-class GalleryLightbox {
+// Gallery Carousel with Lightbox
+class GalleryCarousel {
   constructor() {
+    this.carousel = document.getElementById('galleryCarousel');
+    this.prevBtn = document.getElementById('galleryPrev');
+    this.nextBtn = document.getElementById('galleryNext');
+    
+    // Lightbox elements
     this.lightbox = document.getElementById('lightbox');
     this.lightboxImage = document.getElementById('lightboxImage');
     this.lightboxOverlay = document.getElementById('lightboxOverlay');
-    this.closeBtn = document.getElementById('lightboxClose');
-    this.prevBtn = document.getElementById('lightboxPrev');
-    this.nextBtn = document.getElementById('lightboxNext');
+    this.lightboxClose = document.getElementById('lightboxClose');
+    this.lightboxPrev = document.getElementById('lightboxPrev');
+    this.lightboxNext = document.getElementById('lightboxNext');
+    
     this.galleryItems = document.querySelectorAll('.gallery__item');
     this.images = Array.from(document.querySelectorAll('.gallery__image'));
-    this.currentIndex = 0;
+    this.currentLightboxIndex = 0;
     
     this.init();
   }
   
   init() {
-    // Add click event listeners to gallery items
+    // Carousel navigation
+    this.prevBtn?.addEventListener('click', () => this.scrollCarousel('prev'));
+    this.nextBtn?.addEventListener('click', () => this.scrollCarousel('next'));
+    
+    // Lightbox functionality
     this.galleryItems.forEach((item, index) => {
       item.addEventListener('click', () => this.openLightbox(index));
     });
     
-    // Add event listeners for lightbox controls
-    this.closeBtn?.addEventListener('click', () => this.closeLightbox());
+    this.lightboxClose?.addEventListener('click', () => this.closeLightbox());
     this.lightboxOverlay?.addEventListener('click', () => this.closeLightbox());
-    this.prevBtn?.addEventListener('click', () => this.prevImage());
-    this.nextBtn?.addEventListener('click', () => this.nextImage());
+    this.lightboxPrev?.addEventListener('click', () => this.prevImage());
+    this.lightboxNext?.addEventListener('click', () => this.nextImage());
     
-    // Add keyboard event listeners
+    // Keyboard event listeners
     document.addEventListener('keydown', (e) => {
-      if (this.lightbox.classList.contains('active')) {
+      if (this.lightbox?.classList.contains('active')) {
         switch (e.key) {
           case 'Escape':
             this.closeLightbox();
@@ -73,42 +82,64 @@ class GalleryLightbox {
     });
   }
   
+  scrollCarousel(direction) {
+    if (!this.carousel) return;
+    
+    const scrollAmount = 300; // Adjust based on image width + gap
+    const currentScroll = this.carousel.scrollLeft;
+    
+    if (direction === 'next') {
+      this.carousel.scrollTo({
+        left: currentScroll + scrollAmount,
+        behavior: 'smooth'
+      });
+    } else {
+      this.carousel.scrollTo({
+        left: currentScroll - scrollAmount,
+        behavior: 'smooth'
+      });
+    }
+  }
+  
+  // Lightbox methods
   openLightbox(index) {
-    this.currentIndex = index;
+    this.currentLightboxIndex = index;
     const img = this.images[index];
     
-    this.lightboxImage.src = img.src;
-    this.lightboxImage.alt = img.alt;
-    this.lightbox.classList.add('active');
-    
-    // Prevent body scrolling when lightbox is open
-    document.body.style.overflow = 'hidden';
+    if (this.lightboxImage && img) {
+      this.lightboxImage.src = img.src;
+      this.lightboxImage.alt = img.alt;
+      this.lightbox?.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
   }
   
   closeLightbox() {
-    this.lightbox.classList.remove('active');
+    this.lightbox?.classList.remove('active');
     document.body.style.overflow = '';
   }
   
   nextImage() {
-    this.currentIndex = (this.currentIndex + 1) % this.images.length;
-    this.updateImage();
+    this.currentLightboxIndex = (this.currentLightboxIndex + 1) % this.images.length;
+    this.updateLightboxImage();
   }
   
   prevImage() {
-    this.currentIndex = this.currentIndex === 0 ? this.images.length - 1 : this.currentIndex - 1;
-    this.updateImage();
+    this.currentLightboxIndex = this.currentLightboxIndex === 0 ? this.images.length - 1 : this.currentLightboxIndex - 1;
+    this.updateLightboxImage();
   }
   
-  updateImage() {
-    const img = this.images[this.currentIndex];
-    this.lightboxImage.src = img.src;
-    this.lightboxImage.alt = img.alt;
+  updateLightboxImage() {
+    const img = this.images[this.currentLightboxIndex];
+    if (this.lightboxImage && img) {
+      this.lightboxImage.src = img.src;
+      this.lightboxImage.alt = img.alt;
+    }
   }
 }
 
-// Initialize lightbox when DOM is loaded
+// Initialize carousel and lightbox when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
-  new GalleryLightbox();
+  new GalleryCarousel();
 });
 
