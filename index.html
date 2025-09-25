@@ -346,34 +346,40 @@
     <section class="section section--dark" id="gallery">
       <div class="container">
         <h2 class="section__title">Gallery</h2>
-        <div class="gallery">
-          <div class="gallery__item" data-lightbox="gallery">
-            <img src="food_image.png" alt="Delicious Chinese cuisine from Ichiban Buffet" class="gallery__image">
+        <div class="gallery-carousel-wrapper">
+          <button class="gallery-nav gallery-nav--prev" id="galleryPrev" aria-label="Previous images">‹</button>
+          <div class="gallery-carousel" id="galleryCarousel">
+            <div class="gallery-track">
+              <div class="gallery__item" data-lightbox="gallery">
+                <img src="food_image.png" alt="Delicious Chinese cuisine from Ichiban Buffet" class="gallery__image">
+              </div>
+              <div class="gallery__item" data-lightbox="gallery">
+                <img src="crablegs.png" alt="Fresh crab legs at Ichiban Buffet" class="gallery__image">
+              </div>
+              <div class="gallery__item" data-lightbox="gallery">
+                <img src="ichian_building.png" alt="Ichiban Buffet restaurant exterior" class="gallery__image">
+              </div>
+              <div class="gallery__item" data-lightbox="gallery">
+                <img src="foodimage.png" alt="Variety of dishes at Ichiban Buffet" class="gallery__image">
+              </div>
+              <div class="gallery__item" data-lightbox="gallery">
+                <img src="sushiBarimage.png" alt="Fresh sushi bar at Ichiban Buffet" class="gallery__image">
+              </div>
+              <div class="gallery__item" data-lightbox="gallery">
+                <img src="buffetbarimage.png" alt="Buffet bar with hot dishes" class="gallery__image">
+              </div>
+              <div class="gallery__item" data-lightbox="gallery">
+                <img src="restaurant_image.png" alt="Restaurant dining area" class="gallery__image">
+              </div>
+              <div class="gallery__item" data-lightbox="gallery">
+                <img src="plate_image.png" alt="Beautifully plated dishes" class="gallery__image">
+              </div>
+              <div class="gallery__item" data-lightbox="gallery">
+                <img src="broccoli.png" alt="Fresh vegetables and sides" class="gallery__image">
+              </div>
+            </div>
           </div>
-          <div class="gallery__item" data-lightbox="gallery">
-            <img src="crablegs.png" alt="Fresh crab legs at Ichiban Buffet" class="gallery__image">
-          </div>
-          <div class="gallery__item" data-lightbox="gallery">
-            <img src="ichian_building.png" alt="Ichiban Buffet restaurant exterior" class="gallery__image">
-          </div>
-          <div class="gallery__item" data-lightbox="gallery">
-            <img src="foodimage.png" alt="Variety of dishes at Ichiban Buffet" class="gallery__image">
-          </div>
-          <div class="gallery__item" data-lightbox="gallery">
-            <img src="sushiBarimage.png" alt="Fresh sushi bar at Ichiban Buffet" class="gallery__image">
-          </div>
-          <div class="gallery__item" data-lightbox="gallery">
-            <img src="buffetbarimage.png" alt="Buffet bar with hot dishes" class="gallery__image">
-          </div>
-          <div class="gallery__item" data-lightbox="gallery">
-            <img src="restaurant_image.png" alt="Restaurant dining area" class="gallery__image">
-          </div>
-          <div class="gallery__item" data-lightbox="gallery">
-            <img src="plate_image.png" alt="Beautifully plated dishes" class="gallery__image">
-          </div>
-          <div class="gallery__item" data-lightbox="gallery">
-            <img src="broccoli.png" alt="Fresh vegetables and sides" class="gallery__image">
-          </div>
+          <button class="gallery-nav gallery-nav--next" id="galleryNext" aria-label="Next images">›</button>
         </div>
       </div>
     </section>
