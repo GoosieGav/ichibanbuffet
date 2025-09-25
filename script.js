@@ -107,8 +107,103 @@ class GalleryLightbox {
   }
 }
 
-// Initialize lightbox when DOM is loaded
+// Scroll Animation Observer
+class ScrollAnimations {
+  constructor() {
+    this.observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+    this.observer = new IntersectionObserver(this.handleIntersection.bind(this), this.observerOptions);
+    this.init();
+  }
+  
+  init() {
+    // Add animation classes to elements
+    this.addAnimationClasses();
+    
+    // Observe all animated elements
+    const animatedElements = document.querySelectorAll('[data-animation]');
+    animatedElements.forEach(el => this.observer.observe(el));
+  }
+  
+  addAnimationClasses() {
+    // Hero section
+    const heroTitle = document.querySelector('.hero__title');
+    const heroSubtitle = document.querySelector('.hero__subtitle');
+    const heroActions = document.querySelector('.hero__actions');
+    
+    if (heroTitle) heroTitle.setAttribute('data-animation', 'fade-in');
+    if (heroSubtitle) heroSubtitle.setAttribute('data-animation', 'fade-in');
+    if (heroActions) heroActions.setAttribute('data-animation', 'fade-in');
+    
+    // Section titles
+    const sectionTitles = document.querySelectorAll('.section__title');
+    sectionTitles.forEach(title => title.setAttribute('data-animation', 'fade-in'));
+    
+    // About section
+    const aboutContent = document.querySelector('.visit__content');
+    const aboutImage = document.querySelector('.visit__image');
+    if (aboutContent) aboutContent.setAttribute('data-animation', 'slide-in-left');
+    if (aboutImage) aboutImage.setAttribute('data-animation', 'slide-in-right');
+    
+    // Menu sections
+    const menuSections = document.querySelectorAll('.menu-section');
+    menuSections.forEach(section => section.setAttribute('data-animation', 'fade-in'));
+    
+    // Menu items with stagger
+    const menuItems = document.querySelectorAll('.menu-item');
+    menuItems.forEach((item, index) => {
+      item.setAttribute('data-animation', 'stagger-item');
+      if (index < 6) {
+        item.classList.add(`stagger-delay-${(index % 6) + 1}`);
+      }
+    });
+    
+    // Gallery items with stagger
+    const galleryItems = document.querySelectorAll('.gallery__item');
+    galleryItems.forEach((item, index) => {
+      item.setAttribute('data-animation', 'stagger-item');
+      if (index < 6) {
+        item.classList.add(`stagger-delay-${(index % 6) + 1}`);
+      }
+    });
+    
+    // Review cards with stagger
+    const reviewCards = document.querySelectorAll('.review-card');
+    reviewCards.forEach((card, index) => {
+      card.setAttribute('data-animation', 'stagger-item');
+      if (index < 6) {
+        card.classList.add(`stagger-delay-${(index % 6) + 1}`);
+      }
+    });
+    
+    // Pricing cards
+    const pricingCards = document.querySelectorAll('.card--pricing');
+    pricingCards.forEach(card => card.setAttribute('data-animation', 'scale-in'));
+    
+    // Contact section
+    const contactContent = document.querySelector('.contact__content');
+    if (contactContent) contactContent.setAttribute('data-animation', 'fade-in');
+  }
+  
+  handleIntersection(entries) {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const animationType = entry.target.getAttribute('data-animation');
+        if (animationType) {
+          entry.target.classList.add(animationType, 'visible');
+          // Unobserve after animation to prevent re-triggering
+          this.observer.unobserve(entry.target);
+        }
+      }
+    });
+  }
+}
+
+// Initialize scroll animations when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
   new GalleryLightbox();
+  new ScrollAnimations();
 });
 
