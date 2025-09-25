@@ -262,14 +262,25 @@ class ScrollAnimations {
   }
   
   addAnimationClasses() {
+    console.log('Adding animation classes...');
+    
     // Hero section
     const heroTitle = document.querySelector('.hero__title');
     const heroSubtitle = document.querySelector('.hero__subtitle');
     const heroActions = document.querySelector('.hero__actions');
     
-    if (heroTitle) heroTitle.setAttribute('data-animation', 'fade-in');
-    if (heroSubtitle) heroSubtitle.setAttribute('data-animation', 'fade-in');
-    if (heroActions) heroActions.setAttribute('data-animation', 'fade-in');
+    if (heroTitle) {
+      heroTitle.setAttribute('data-animation', 'fade-in');
+      console.log('Added fade-in to hero title');
+    }
+    if (heroSubtitle) {
+      heroSubtitle.setAttribute('data-animation', 'fade-in');
+      console.log('Added fade-in to hero subtitle');
+    }
+    if (heroActions) {
+      heroActions.setAttribute('data-animation', 'fade-in');
+      console.log('Added fade-in to hero actions');
+    }
     
     // Section titles
     const sectionTitles = document.querySelectorAll('.section__title');
@@ -325,8 +336,10 @@ class ScrollAnimations {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         const animationType = entry.target.getAttribute('data-animation');
+        console.log('Element intersecting:', entry.target, 'Animation type:', animationType);
         if (animationType) {
           entry.target.classList.add(animationType, 'visible');
+          console.log('Added animation classes:', animationType, 'visible');
           // Unobserve after animation to prevent re-triggering
           this.observer.unobserve(entry.target);
         }
