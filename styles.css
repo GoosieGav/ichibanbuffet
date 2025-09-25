@@ -686,8 +686,9 @@ h4 { font-size: clamp(1.25rem, 2.5vw, 1.75rem); font-weight: 500; }
   .topbar .container { padding: 6px 16px; flex-wrap: wrap; gap: 6px; }
   .topbar__right { flex-wrap: wrap; gap: 6px; }
   .topbar .btn-logo { padding: 3px; }
-<<<<<<< HEAD
-  .topbar .btn-logo__image { height: 26px; }
+  .topbar .btn-logo__image { height: 26px; width: 26px; }
+  /* Center delivery buttons on mobile */
+  .contact__delivery-buttons { justify-content: center; }
   /* Hero delivery mobile adjustments */
   .hero__delivery { margin-top: 20px; }
   .hero__delivery-text { font-size: 15px; text-align: center; }
@@ -698,11 +699,6 @@ h4 { font-size: clamp(1.25rem, 2.5vw, 1.75rem); font-weight: 500; }
     padding: 14px; 
   }
   .btn-logo__image--hero { height: 36px; }
-=======
-  .topbar .btn-logo__image { height: 26px; width: 26px; }
-  /* Center delivery buttons on mobile */
-  .contact__delivery-buttons { justify-content: center; }
->>>>>>> 94ec969f024d0ba2f6fb532486bbe3c7ea3a9289
   /* Menu section mobile adjustments */
   .menu-section { margin-bottom: 32px; }
   .menu-section__title { font-size: clamp(1.5rem, 4vw, 2rem); margin-bottom: 20px; }
