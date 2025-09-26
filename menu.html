@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Menu • Ichiban Buffet • Springfield, MO</title>
+    <meta name="description" content="Full menu at Ichiban Buffet - All-you-can-eat buffet, Japanese cuisine, Chinese take-out, and lunch specials in Springfield, MO." />
+    <link rel="icon" href="assets/logo.png?v=2" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css?v=2" />
+  </head>
+  <body>
+    <!-- Top contact bar -->
+    <div class="topbar">
+      <div class="container">
+        <div class="topbar__left">
+          <a href="tel:+14178662770">(417) 866-2770</a>
+          <span class="divider">•</span>
+          <a href="https://maps.google.com/?q=625%20N%20Glenstone%20Ave%2C%20Springfield%2C%20MO%2065802" target="_blank" rel="noopener">625 N Glenstone Ave, Springfield, MO 65802</a>
+        </div>
+        <div class="topbar__right">
+          <a class="btn-logo btn-logo--ubereats" href="https://www.ubereats.com/store/ichiban-buffet/Ab1CfiW3SzqIDx7NqbopiQ?srsltid=AfmBOorY4OmGnEBORrWRAS26iOSYQIhC-g7C0i2CvBEBnhou4y5Q-RaK" target="_blank" rel="noopener" aria-label="Order on Uber Eats">
+            <img src="ubereatslogo.png" alt="Uber Eats" class="btn-logo__image">
+          </a>
+          <a class="btn-logo btn-logo--doordash" href="https://www.doordash.com/store/ichiban-springfield-30943552/43036946/?srsltid=AfmBOopvsV5Pge7H-Jjjr4HYruxoVjJng0b3S1mMP1VKHnYzj8UOavPu" target="_blank" rel="noopener" aria-label="Order on DoorDash">
+            <img src="doordashlogo.png" alt="DoorDash" class="btn-logo__image">
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Header / Nav -->
+    <header class="header" id="header">
+      <div class="container header__inner">
+        <a href="index.html" class="brand" aria-label="Ichiban Buffet home">
+          <img src="assets/logo.png?v=2" alt="Ichiban Buffet logo" class="brand__logo" />
+          <span class="brand__text">Ichiban Buffet</span>
+        </a>
+        <nav class="nav" id="primary-nav" aria-label="Primary navigation">
+          <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu">☰</button>
+          <ul class="nav__menu" id="navMenu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="index.html#reviews">Reviews</a></li>
+            <li><a href="index.html#gallery">Gallery</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Menu Hero -->
+    <section class="menu-hero">
+      <div class="container">
+        <h1 class="menu-hero__title">Our Menu</h1>
+        <p class="menu-hero__subtitle">All-you-can-eat buffet, Japanese cuisine, and Chinese take-out</p>
+      </div>
+    </section>
+
+    <!-- Buffet Section -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section__title">All You Can Eat Buffet</h2>
+        <p class="menu-description">The buffet includes over 100 items, featuring Sushi, Hibachi, Grilled Steak, Fried Chicken, Mashed Potato, Sizzling Dishes, Stir-Fried Dishes, Shrimp Cocktail, Italian, Dessert & Fruits, and more.</p>
+        
+        <div class="pricing-grid">
+          <article class="card card--pricing">
+            <h3 class="card__title">Lunch Buffet</h3>
+            <p class="pricing__schedule">Monday - Saturday: 11:00 AM - 4:00 PM</p>
+            <div class="pricing__details">
+              <div class="pricing__item">
+                <span class="pricing__label">Adult</span>
+                <span class="pricing__price">$9.99</span>
+              </div>
+              <div class="pricing__item">
+                <span class="pricing__label">Kid's (3-6 yrs)</span>
+                <span class="pricing__price">$3.99</span>
+              </div>
+              <div class="pricing__item">
+                <span class="pricing__label">Kid's (7-10 yrs)</span>
+                <span class="pricing__price">$5.99</span>
+              </div>
+            </div>
+          </article>
+          
+          <article class="card card--pricing">
+            <h3 class="card__title">Dinner Buffet</h3>
+            <p class="pricing__schedule">Monday to Thursday</p>
+            <div class="pricing__details">
+              <div class="pricing__item">
+                <span class="pricing__label">Adult</span>
+                <span class="pricing__price">$12.99</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="card card--pricing card--featured">
+            <h3 class="card__title">Friday & Saturday Seafood Buffet</h3>
+            <p class="pricing__schedule">Friday & Saturday</p>
+            <div class="pricing__details">
+              <div class="pricing__item">
+                <span class="pricing__label">Adult</span>
+                <span class="pricing__price">$14.99</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="card card--pricing">
+            <h3 class="card__title">Sunday All Day Dinner</h3>
+            <p class="pricing__schedule">All Day</p>
+            <div class="pricing__details">
+              <div class="pricing__item">
+                <span class="pricing__label">Adult</span>
+                <span class="pricing__price">$14.99</span>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="card">
+          <h3 class="card__title">Children's Dinner & Weekend Pricing</h3>
+          <div class="pricing__details">
+            <div class="pricing__item">
+              <span class="pricing__label">Children (3-6 yrs)</span>
+              <span class="pricing__price">$5.99</span>
+            </div>
+            <div class="pricing__item">
+              <span class="pricing__label">Children (7-10 yrs)</span>
+              <span class="pricing__price">$8.99</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Japanese Cuisine Section -->
+    <section class="section section--dark">
+      <div class="container">
+        <h2 class="section__title">Japanese Cuisine (À la Carte Menu)</h2>
+        
+        <div class="menu-section">
+          <h3 class="menu-section__title">Rolls & Sushi</h3>
+          <div class="menu-grid">
+            <div class="menu-item">
+              <span class="menu-item__name">Cucumber Roll (5 pcs)</span>
+              <span class="menu-item__price">$4.50</span>
+            </div>
+            <div class="menu-item">
+              <span class="menu-item__name">Vegetable Roll (5 pcs)</span>
+              <span class="menu-item__price">$5.50</span>
+            </div>
+            <div class="menu-item">
+              <span class="menu-item__name">California Roll (6 pcs)</span>
+              <span class="menu-item__price">$5.25</span>
+            </div>
+            <div class="menu-item">
+              <span class="menu-item__name">Tuna Roll (6 pcs)</span>
+              <span class="menu-item__price">$5.50</span>
+            </div>
+            <div class="menu-item">
+              <span class="menu-item__name">Salmon Roll (6 pcs)</span>
+              <span class="menu-item__price">$5.50</span>
+            </div>
+            <div class="menu-item">
+              <span class="menu-item__name">New York Roll (6 pcs)</span>
+              <span class="menu-item__price">$6.25</span>
+            </div>
+            <div class="menu-item">
+              <span class="menu-item__name">Philadelphia Roll (6 pcs)</span>
+              <span class="menu-item__price">$6.25</span>
+            </div>
+            <div class="menu-item">
+              <span class="menu-item__name">Spicy Tuna Roll (6 pcs)</span>
+              <span class="menu-item__price">$6.25</span>
+            </div>
+            <div class="menu-item">
+              <span class="menu-item__name">Spicy Salmon Roll (6 pcs)</span>
+              <span class="menu-item__price">$6.50</span>
+            </div>
+            <div class="menu-item">
+              <span class="menu-item__name">Shrimp Tempura Roll (5 pcs)</span>
+              <span class="menu-item__price">$7.25</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-section">
+          <h3 class="menu-section__title">Sushi Pieces</h3>
+          <div class="menu-grid">
+            <div class="menu-item">
+              <span class="menu-item__name">Egg Sushi</span>
+              <span class="menu-item__price">$3.00</span>
+            </div>
+            <div class="menu-item">
+              <span class="menu-item__name">Crab Sushi</span>
+              <span class="menu-item__price">$3.00</span>
+            </div>
+            <div class="menu-item">
+              <span class="menu-item__name">Tofu Skin Sushi</span>
+              <span class="menu-item__price">$3.50</span>
+            </div>
+            <div class="menu-item">
+              <span class="menu-item__name">Yellowtail Sushi</span>
+              <span class="menu-item__price">$3.50</span>
+            </div>
+            <div class="menu-item">
+              <span class="menu-item__name">Tuna Sushi</span>
+              <span class="menu-item__price">$3.50</span>
+            </div>
+            <div class="menu-item">
+              <span class="menu-item__name">Salmon Sushi</span>
+              <span class="menu-item__price">$3.50</span>
+            </div>
+            <div class="menu-item">
+              <span class="menu-item__name">Shrimp Sushi</span>
+              <span class="menu-item__price">$3.50</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Chinese Take-Out Section -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section__title">Chinese Take-Out Menu</h2>
+        <p class="menu-description">A red chili pepper icon 🌶️ indicates a "Hot and Spicy" dish</p>
+        
+        <div class="menu-section">
+          <h3 class="menu-section__title">Appetizers</h3>
+          <div class="menu-grid">
+            <div class="menu-item">
+              <span class="menu-item__name">Egg Roll (2)</span>
+              <span class="menu-item__price">$3.75</span>
+            </div>
+            <div class="menu-item">
+              <span class="menu-item__name">Dumpling (Steamed or pan fried)</span>
+              <span class="menu-item__price">$6.25</span>
+            </div>
+            <div class="menu-item">
+              <span class="menu-item__name">Chicken Sticks (4)</span>
+              <span class="menu-item__price">$5.95</span>
+            </div>
+            <div class="menu-item">
+              <span class="menu-item__name">Crab Rangoon (12)</span>
+              <span class="menu-item__price">$6.95</span>
+            </div>
+            <div class="menu-item">
+              <span class="menu-item__name">Boneless Spare Ribs (S)</span>
+              <span class="menu-item__price">$7.95</span>
+            </div>
+            <div class="menu-item">
+              <span class="menu-item__name">Boneless Spare Ribs (L)</span>
+              <span class="menu-item__price">$12.95</span>
+            </div>
+            <div class="menu-item">
+              <span class="menu-item__name">B.B.Q. Spare Ribs (S)</span>
+              <span class="menu-item__price">$8.95</span>
+            </div>
+            <div class="menu-item">
+              <span class="menu-item__name">B.B.Q. Spare Ribs (L)</span>
+              <span class="menu-item__price">$13.95</span>
+            </div>
+            <div class="menu-item">
+              <span class="menu-item__name">Chinese Donut (10)</span>
+              <span class="menu-item__price">$4.95</span>
+            </div>
+            <div class="menu-item">
+              <span class="menu-item__name">Fried Chicken Wings (6)</span>
+              <span class="menu-item__price">$6.95</span>
+            </div>
+            <div class="menu-item">
+              <span class="menu-item__name">Pu Pu Platter (for 2)</span>
+              <span class="menu-item__price">$12.95</span>
+            </div>
+            <div class="menu-item">
+              <span class="menu-item__name">Seaweed Salad (S)</span>
+              <span class="menu-item__price">$6.95</span>
+            </div>
+            <div class="menu-item">
+              <span class="menu-item__name">Seaweed Salad (L)</span>
+              <span class="menu-item__price">$10.99</span>
+            </div>
+            <div class="menu-item">
+              <span class="menu-item__name">Egg Custards (1 PC)</span>
+              <span class="menu-item__price">$2.25</span>
+            </div>
+            <div class="menu-item">
+              <span class="menu-item__name">Kimchee</span>
+              <span class="menu-item__price">$7.99</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-section">
+          <h3 class="menu-section__title">Soup (with Fried Noodle)</h3>
+          <div class="menu-grid">
+            <div class="menu-item">
+              <span class="menu-item__name">Wonton Soup (Pt.)</span>
+              <span class="menu-item__price">$3.25</span>
+            </div>
+            <div class="menu-item">
+              <span class="menu-item__name">Wonton Soup (Qt.)</span>
+              <span class="menu-item__price">$4.25</span>
+            </div>
+            <div class="menu-item">
+              <span class="menu-item__name">Egg Drop Soup (Pt.)</span>
+              <span class="menu-item__price">$3.25</span>
+            </div>
+            <div class="menu-item">
+              <span class="menu-item__name">Egg Drop Soup (Qt.)</span>
+              <span class="menu-item__price">$4.25</span>
+            </div>
+            <div class="menu-item">
+              <span class="menu-item__name">Hot & Sour Soup 🌶️ (Pt.)</span>
+              <span class="menu-item__price">$3.75</span>
+            </div>
+            <div class="menu-item">
+              <span class="menu-item__name">Hot & Sour Soup 🌶️ (Qt.)</span>
+              <span class="menu-item__price">$5.25</span>
+            </div>
+            <div class="menu-item">
+              <span class="menu-item__name">Wonton Egg Drop Mixed Soup (Pt.)</span>
+              <span class="menu-item__price">$3.75</span>
+            </div>
+            <div class="menu-item">
+              <span class="menu-item__name">Wonton Egg Drop Mixed Soup (Qt.)</span>
+              <span class="menu-item__price">$5.25</span>
+            </div>
+            <div class="menu-item">
+              <span class="menu-item__name">Chicken Rice or Noodle soup (Pt.)</span>
+              <span class="menu-item__price">$3.75</span>
+            </div>
+            <div class="menu-item">
+              <span class="menu-item__name">Chicken Rice or Noodle soup (Qt.)</span>
+              <span class="menu-item__price">$5.25</span>
+            </div>
+            <div class="menu-item">
+              <span class="menu-item__name">Veso Soup (for 2)</span>
+              <span class="menu-item__price">$5.99</span>
+            </div>
+            <div class="menu-item">
+              <span class="menu-item__name">Seafood Soup (for 2)</span>
+              <span class="menu-item__price">$6.50</span>
+            </div>
+            <div class="menu-item">
+              <span class="menu-item__name">House Special Soup (for 2)</span>
+              <span class="menu-item__price">$7.25</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lunch Specials Section -->
+    <section class="section section--dark">
+      <div class="container">
+        <h2 class="section__title">Chinese Lunch Special Combination Plate</h2>
+        <p class="menu-description">Monday-Saturday 11:00 AM to 3:00 PM<br>Served w. Pork Fried Rice & Egg Roll</p>
+        
+        <div class="lunch-specials-table">
+          <div class="table-header">
+            <div class="table-cell">Item</div>
+            <div class="table-cell">Name</div>
+            <div class="table-cell">Lunch</div>
+            <div class="table-cell">Combo</div>
+          </div>
+          <div class="table-row">
+            <div class="table-cell">L1.</div>
+            <div class="table-cell">Lo Mein (Vegetable, roast pork, chicken, beef or shrimp)</div>
+            <div class="table-cell">$7.25</div>
+            <div class="table-cell">$9.25</div>
+          </div>
+          <div class="table-row">
+            <div class="table-cell">L2.</div>
+            <div class="table-cell">Egg Foo Young (Roast pork or chicken)</div>
+            <div class="table-cell">$7.25</div>
+            <div class="table-cell">$9.25</div>
+          </div>
+          <div class="table-row">
+            <div class="table-cell">L3.</div>
+            <div class="table-cell">Broccoli w. Garlic Sauce 🌶️</div>
+            <div class="table-cell">$7.25</div>
+            <div class="table-cell">$9.45</div>
+          </div>
+          <div class="table-row">
+            <div class="table-cell">L4.</div>
+            <div class="table-cell">Chicken w. Broccoli</div>
+            <div class="table-cell">$7.25</div>
+            <div class="table-cell">$9.45</div>
+          </div>
+          <div class="table-row">
+            <div class="table-cell">L5.</div>
+            <div class="table-cell">Chicken w. Cashew Nuts</div>
+            <div class="table-cell">$7.25</div>
+            <div class="table-cell">$9.45</div>
+          </div>
+          <div class="table-row">
+            <div class="table-cell">L6.</div>
+            <div class="table-cell">Chicken w. Garlic Sauce 🌶️</div>
+            <div class="table-cell">$7.25</div>
+            <div class="table-cell">$9.45</div>
+          </div>
+          <div class="table-row">
+            <div class="table-cell">L8.</div>
+            <div class="table-cell">Sweet & Sour Chicken or Pork</div>
+            <div class="table-cell">$7.25</div>
+            <div class="table-cell">$9.45</div>
+          </div>
+          <div class="table-row">
+            <div class="table-cell">L9.</div>
+            <div class="table-cell">Pork w. Mixed Vegetables</div>
+            <div class="table-cell">$7.50</div>
+            <div class="table-cell">$9.45</div>
+          </div>
+          <div class="table-row">
+            <div class="table-cell">L10.</div>
+            <div class="table-cell">Pork w. Broccoli</div>
+            <div class="table-cell">$7.50</div>
+            <div class="table-cell">$9.45</div>
+          </div>
+          <div class="table-row">
+            <div class="table-cell">L11.</div>
+            <div class="table-cell">Pepper Steak w. Onion</div>
+            <div class="table-cell">$7.75</div>
+            <div class="table-cell">$9.95</div>
+          </div>
+          <div class="table-row">
+            <div class="table-cell">L12.</div>
+            <div class="table-cell">Beef w. Broccoli</div>
+            <div class="table-cell">$7.75</div>
+            <div class="table-cell">$9.95</div>
+          </div>
+          <div class="table-row">
+            <div class="table-cell">L13.</div>
+            <div class="table-cell">Beef w. Garlic Sauce 🌶️</div>
+            <div class="table-cell">$7.75</div>
+            <div class="table-cell">$9.95</div>
+          </div>
+          <div class="table-row">
+            <div class="table-cell">L14.</div>
+            <div class="table-cell">Shrimp w. Broccoli</div>
+            <div class="table-cell">$7.75</div>
+            <div class="table-cell">$9.95</div>
+          </div>
+          <div class="table-row">
+            <div class="table-cell">L15.</div>
+            <div class="table-cell">Shrimp w. Garlic Sauce 🌶️</div>
+            <div class="table-cell">$7.75</div>
+            <div class="table-cell">$9.95</div>
+          </div>
+          <div class="table-row">
+            <div class="table-cell">L16.</div>
+            <div class="table-cell">Shrimp w. Mixed Vegetable</div>
+            <div class="table-cell">$7.75</div>
+            <div class="table-cell">$9.95</div>
+          </div>
+          <div class="table-row">
+            <div class="table-cell">L17.</div>
+            <div class="table-cell">Shrimp w. Lobster Sauce</div>
+            <div class="table-cell">$7.75</div>
+            <div class="table-cell">$9.95</div>
+          </div>
+          <div class="table-row">
+            <div class="table-cell">L18.</div>
+            <div class="table-cell">Shrimp w. Mushroom</div>
+            <div class="table-cell">$7.75</div>
+            <div class="table-cell">$9.95</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Side Orders Section -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section__title">Side Orders</h2>
+        <div class="menu-grid">
+          <div class="menu-item">
+            <span class="menu-item__name">White Rice</span>
+            <span class="menu-item__price">$3.00</span>
+          </div>
+          <div class="menu-item">
+            <span class="menu-item__name">Brown Rice</span>
+            <span class="menu-item__price">$4.00</span>
+          </div>
+          <div class="menu-item">
+            <span class="menu-item__name">Fried Cookies</span>
+            <span class="menu-item__price">$3.00</span>
+          </div>
+          <div class="menu-item">
+            <span class="menu-item__name">Crispy Noodle (6 for)</span>
+            <span class="menu-item__price">$3.00</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container footer__inner">
+        <div class="footer__brand">
+          <img src="assets/logo.png?v=2" alt="Ichiban Buffet" class="brand__logo brand__logo--small" />
+          <span>Ichiban Buffet • Springfield, MO</span>
+        </div>
+        <div>
+          <small>© <span id="year"></span> Ichiban Buffet. All rights reserved.</small>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Local JS -->
+    <script src="script.js"></script>
+  </body>
+</html>

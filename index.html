@@ -43,7 +43,7 @@
           <ul class="nav__menu" id="navMenu">
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
-            <li><a href="#menu">Menu</a></li>
+            <li><a href="menu.html">Menu</a></li>
             <li><a href="#reviews">Reviews</a></li>
             <li><a href="#gallery">Gallery</a></li>
             <li><a href="#contact">Contact</a></li>
@@ -62,7 +62,7 @@
             <img src="assets/logo.png?v=2" alt="Ichiban Buffet logo" class="hero__brand" />
             <p class="hero__subtitle">All-you-can-eat restaurant with Japanese sushi, Chinese stir-fries & American comfort foods.</p>
             <div class="hero__actions">
-              <a class="btn btn--primary btn--menu" href="#menu">Our Menu</a>
+              <a class="btn btn--primary btn--menu" href="menu.html">Our Menu</a>
               <a class="btn btn--primary" href="tel:+14178662770">Call (417) 866-2770</a>
             </div>
           </div>
@@ -117,162 +117,60 @@
           Enjoy our all-you-can-eat buffet or order individual items for takeout
         </p>
         
-        <!-- Popular Items -->
-        <div class="menu-section">
-          <h3 class="menu-section__title">Popular Items</h3>
-          <div class="cards">
-            <article class="card card--feature">
-              <h4 class="card__title">General Tso's Chicken</h4>
-              <p>Crispy chicken in our signature sweet and tangy sauce. A customer favorite!</p>
-              <span class="menu-price">$10.95</span>
-            </article>
-            <article class="card card--feature">
-              <h4 class="card__title">Sweet & Sour Pork</h4>
-              <p>Tender pork with pineapple, bell peppers in classic sweet & sour sauce.</p>
-              <span class="menu-price">$9.95</span>
-            </article>
-            <article class="card card--feature">
-              <h4 class="card__title">Orange Chicken</h4>
-              <p>Battered chicken pieces glazed with our house-made orange sauce.</p>
-              <span class="menu-price">$10.95</span>
-            </article>
-          </div>
+        <!-- Menu Overview -->
+        <div class="cards">
+          <article class="card card--feature">
+            <h3 class="card__title">All You Can Eat Buffet</h3>
+            <p>Over 100 items including Sushi, Hibachi, Grilled Steak, Fried Chicken, Mashed Potato, Sizzling Dishes, Stir-Fried Dishes, Shrimp Cocktail, Italian, Dessert & Fruits, and more.</p>
+            <div class="pricing__details">
+              <div class="pricing__item">
+                <span class="pricing__label">Lunch (Mon-Sat 11AM-4PM)</span>
+                <span class="pricing__price">$9.99</span>
+              </div>
+              <div class="pricing__item">
+                <span class="pricing__label">Dinner (Mon-Thu)</span>
+                <span class="pricing__price">$12.99</span>
+              </div>
+              <div class="pricing__item">
+                <span class="pricing__label">Seafood Buffet (Fri-Sat)</span>
+                <span class="pricing__price">$14.99</span>
+              </div>
+            </div>
+          </article>
+          
+          <article class="card card--feature">
+            <h3 class="card__title">Japanese Cuisine</h3>
+            <p>Fresh sushi, sashimi, and specialty rolls made to order. From classic California rolls to our signature Dragon Roll and House Special rolls.</p>
+            <div class="pricing__details">
+              <div class="pricing__item">
+                <span class="pricing__label">Sushi Rolls</span>
+                <span class="pricing__price">$4.50 - $14.95</span>
+              </div>
+              <div class="pricing__item">
+                <span class="pricing__label">Sashimi</span>
+                <span class="pricing__price">$18.95 - $25.95</span>
+              </div>
+            </div>
+          </article>
+          
+          <article class="card card--feature">
+            <h3 class="card__title">Chinese Take-Out</h3>
+            <p>Authentic Chinese dishes including appetizers, soups, fried rice, lo mein, chow mein, and chef's specials. Available for takeout and delivery.</p>
+            <div class="pricing__details">
+              <div class="pricing__item">
+                <span class="pricing__label">Lunch Specials (11AM-3PM)</span>
+                <span class="pricing__price">$7.25 - $9.95</span>
+              </div>
+              <div class="pricing__item">
+                <span class="pricing__label">Dinner Entrees</span>
+                <span class="pricing__price">$7.25 - $14.99</span>
+              </div>
+            </div>
+          </article>
         </div>
-
-        <!-- Appetizers -->
-        <div class="menu-section">
-          <h3 class="menu-section__title">Appetizers</h3>
-          <div class="menu-grid">
-            <div class="menu-item">
-              <span class="menu-item__name">Egg Roll (2)</span>
-              <span class="menu-item__price">$2.75</span>
-            </div>
-            <div class="menu-item">
-              <span class="menu-item__name">Crab Rangoon (4)</span>
-              <span class="menu-item__price">$4.25</span>
-            </div>
-            <div class="menu-item">
-              <span class="menu-item__name">Chicken Wings (6)</span>
-              <span class="menu-item__price">$8.95</span>
-            </div>
-            <div class="menu-item">
-              <span class="menu-item__name">BBQ Ribs</span>
-              <span class="menu-item__price">$8.95</span>
-            </div>
-            <div class="menu-item">
-              <span class="menu-item__name">Fried Wonton (10)</span>
-              <span class="menu-item__price">$4.25</span>
-            </div>
-            <div class="menu-item">
-              <span class="menu-item__name">Pot Stickers (6)</span>
-              <span class="menu-item__price">$6.95</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Japanese Cuisine -->
-        <div class="menu-section">
-          <h3 class="menu-section__title">Japanese Cuisine</h3>
-          <div class="menu-grid">
-            <div class="menu-item">
-              <span class="menu-item__name">California Roll</span>
-              <span class="menu-item__price">$4.50</span>
-            </div>
-            <div class="menu-item">
-              <span class="menu-item__name">Spicy Tuna Roll</span>
-              <span class="menu-item__price">$5.00</span>
-            </div>
-            <div class="menu-item">
-              <span class="menu-item__name">Salmon Roll</span>
-              <span class="menu-item__price">$4.50</span>
-            </div>
-            <div class="menu-item">
-              <span class="menu-item__name">Philadelphia Roll</span>
-              <span class="menu-item__price">$5.25</span>
-            </div>
-            <div class="menu-item">
-              <span class="menu-item__name">Tempura Roll</span>
-              <span class="menu-item__price">$6.25</span>
-            </div>
-            <div class="menu-item">
-              <span class="menu-item__name">Sashimi Combo</span>
-              <span class="menu-item__price">$12.95</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Pricing -->
-        <div class="menu-section">
-          <h3 class="menu-section__title">Buffet Pricing</h3>
-          <div class="pricing-grid">
-            <article class="card card--pricing">
-              <h4 class="card__title">Lunch Buffet</h4>
-              <p class="pricing__schedule">Monday - Saturday</p>
-              <div class="pricing__details">
-                <div class="pricing__item">
-                  <span class="pricing__label">Adult</span>
-                  <span class="pricing__price">$11.99</span>
-                </div>
-                <div class="pricing__item">
-                  <span class="pricing__label">Children 3-6</span>
-                  <span class="pricing__price">$3.99</span>
-                </div>
-                <div class="pricing__item">
-                  <span class="pricing__label">Children 7-10</span>
-                  <span class="pricing__price">$6.99</span>
-                </div>
-              </div>
-            </article>
-            
-            <article class="card card--pricing">
-              <h4 class="card__title">Dinner Buffet</h4>
-              <p class="pricing__schedule">Monday - Thursday</p>
-              <div class="pricing__details">
-                <div class="pricing__item">
-                  <span class="pricing__label">Adult</span>
-                  <span class="pricing__price">$13.99</span>
-                </div>
-                <div class="pricing__item">
-                  <span class="pricing__label">Children 3-6</span>
-                  <span class="pricing__price">$5.99</span>
-                </div>
-                <div class="pricing__item">
-                  <span class="pricing__label">Children 7-10</span>
-                  <span class="pricing__price">$8.99</span>
-                </div>
-              </div>
-            </article>
-
-            <article class="card card--pricing card--featured">
-              <h4 class="card__title">Seafood Buffet</h4>
-              <p class="pricing__schedule">Friday & Saturday Dinner Only</p>
-              <div class="pricing__details">
-                <div class="pricing__item">
-                  <span class="pricing__label">Adult</span>
-                  <span class="pricing__price">$15.99</span>
-                </div>
-                <div class="pricing__item">
-                  <span class="pricing__label">Children 3-6</span>
-                  <span class="pricing__price">$5.99</span>
-                </div>
-                <div class="pricing__item">
-                  <span class="pricing__label">Children 7-10</span>
-                  <span class="pricing__price">$8.99</span>
-                </div>
-              </div>
-            </article>
-
-            <article class="card card--pricing">
-              <h4 class="card__title">Sunday Special</h4>
-              <p class="pricing__schedule">All Day Dinner</p>
-              <div class="pricing__details">
-                <div class="pricing__item">
-                  <span class="pricing__label">Adult</span>
-                  <span class="pricing__price">$14.99</span>
-                </div>
-              </div>
-            </article>
-          </div>
+        
+        <div style="text-align: center; margin-top: 40px;">
+          <a class="btn btn--primary" href="menu.html">View Full Menu</a>
         </div>
       </div>
     </section>
