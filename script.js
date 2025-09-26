@@ -244,5 +244,6 @@ class GalleryCarousel {
 // Initialize carousel and lightbox when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
   new GalleryCarousel();
+  new GalleryLightbox();
 });
 
