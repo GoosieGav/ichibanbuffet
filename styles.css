@@ -577,6 +577,63 @@ h4 { font-size: clamp(1.25rem, 2.5vw, 1.75rem); font-weight: 500; }
 .cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
 .card--feature { background: #0f0f0f; border: 1px solid #222; }
 
+/* Buffet Hero Section */
+.menu-hero-section {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  align-items: center;
+}
+
+.card--buffet-hero {
+  background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
+  border: 2px solid var(--color-primary);
+  box-shadow: 0 0 30px rgba(225, 27, 34, 0.2);
+  max-width: 800px;
+  width: 100%;
+  position: relative;
+}
+
+.card--buffet-hero::before {
+  content: "Most Popular";
+  position: absolute;
+  top: -12px;
+  right: 20px;
+  background: var(--color-primary);
+  color: #fff;
+  padding: 6px 16px;
+  border-radius: 16px;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 12px rgba(225, 27, 34, 0.3);
+}
+
+.buffet-description {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 24px;
+  color: var(--color-text);
+}
+
+.additional-options {
+  text-align: center;
+  max-width: 700px;
+}
+
+.additional-options__text {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--color-muted);
+  margin: 0;
+}
+
+.additional-options__text strong {
+  color: var(--color-text);
+  font-weight: 600;
+}
+
 /* Pricing grid */
 .pricing-grid { 
   display: grid; 
@@ -759,7 +816,19 @@ h4 { font-size: clamp(1.25rem, 2.5vw, 1.75rem); font-weight: 500; }
   font-size: 18px;
   color: var(--color-muted);
   max-width: 600px;
+  margin: 0 auto 16px;
+}
+
+.menu-hero__description {
+  max-width: 500px;
   margin: 0 auto;
+}
+
+.menu-hero__description p {
+  font-size: 16px;
+  color: var(--color-muted);
+  margin: 0;
+  line-height: 1.5;
 }
 
 .menu-description {
