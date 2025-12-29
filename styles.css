@@ -195,7 +195,12 @@ h4 { font-size: clamp(1.25rem, 2.5vw, 1.75rem); font-weight: 500; }
 }
 
 /* Menu sections */
-.menu-section { margin-bottom: 64px; }
+.menu-section { 
+  margin-bottom: 64px; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .menu-section:last-child { margin-bottom: 0; }
 .menu-section__title { 
   font-family: 'Playfair Display', Georgia, serif;
@@ -640,6 +645,36 @@ h4 { font-size: clamp(1.25rem, 2.5vw, 1.75rem); font-weight: 500; }
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
   gap: 24px; 
   margin-bottom: 32px;
+}
+.pricing-grid--centered { 
+  justify-items: center; 
+  max-width: 1200px; 
+  margin: 0 auto 32px;
+}
+.pricing-grid--centered .card--pricing {
+  width: 100%;
+  max-width: 320px;
+}
+
+/* Pricing Disclaimer */
+.pricing-disclaimer {
+  text-align: center;
+  margin-bottom: 48px;
+  padding: 24px;
+  background: rgba(225, 27, 34, 0.12);
+  border: 2px solid rgba(225, 27, 34, 0.4);
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(225, 27, 34, 0.15);
+}
+
+.pricing-disclaimer__text {
+  margin: 10px 0;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-accent);
+  letter-spacing: 0.3px;
+  line-height: 1.6;
 }
 .card--pricing { 
   background: #101010; 
