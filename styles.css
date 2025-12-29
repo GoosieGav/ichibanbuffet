@@ -647,13 +647,14 @@ h4 { font-size: clamp(1.25rem, 2.5vw, 1.75rem); font-weight: 500; }
   margin-bottom: 32px;
 }
 .pricing-grid--centered { 
+  grid-template-columns: repeat(2, 1fr);
   justify-items: center; 
-  max-width: 1200px; 
+  max-width: 800px; 
   margin: 0 auto 32px;
 }
 .pricing-grid--centered .card--pricing {
   width: 100%;
-  max-width: 320px;
+  max-width: 380px;
 }
 
 /* Pricing Disclaimer */
@@ -755,6 +756,7 @@ h4 { font-size: clamp(1.25rem, 2.5vw, 1.75rem); font-weight: 500; }
   .grid--2 { grid-template-columns: 1fr; }
   .cards { grid-template-columns: 1fr; }
   .pricing-grid { grid-template-columns: 1fr; }
+  .pricing-grid--centered { grid-template-columns: 1fr; }
   .menu-grid { grid-template-columns: 1fr; }
   .reviews-grid { grid-template-columns: 1fr; }
   /* Mobile gallery carousel adjustments */
