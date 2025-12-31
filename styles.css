@@ -107,6 +107,116 @@ h4 { font-size: clamp(1.25rem, 2.5vw, 1.75rem); font-weight: 500; }
   width: 32px;
 }
 
+/* New Year Banner */
+.newyear-banner {
+  background: linear-gradient(135deg, rgba(225, 27, 34, 0.95) 0%, rgba(161, 19, 24, 0.95) 50%, rgba(225, 27, 34, 0.95) 100%);
+  border-bottom: 3px solid var(--color-accent);
+  box-shadow: 0 4px 20px rgba(225, 27, 34, 0.4);
+  position: relative;
+  overflow: hidden;
+  animation: bannerPulse 3s ease-in-out infinite;
+}
+
+.newyear-banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  animation: bannerShine 3s infinite;
+}
+
+@keyframes bannerPulse {
+  0%, 100% {
+    box-shadow: 0 4px 20px rgba(225, 27, 34, 0.4);
+  }
+  50% {
+    box-shadow: 0 4px 30px rgba(225, 27, 34, 0.6);
+  }
+}
+
+@keyframes bannerShine {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+.newyear-banner__content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 16px 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.newyear-banner__icon {
+  font-size: 32px;
+  line-height: 1;
+  animation: bounce 2s ease-in-out infinite;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+.newyear-banner__text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  text-align: center;
+}
+
+.newyear-banner__title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  letter-spacing: 1px;
+}
+
+.newyear-banner__details {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+  font-size: clamp(14px, 2vw, 16px);
+  color: #fff;
+  font-weight: 500;
+}
+
+.newyear-banner__item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.newyear-banner__item strong {
+  color: #fff;
+  font-weight: 700;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.newyear-banner__divider {
+  opacity: 0.7;
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
 /* Header */
 .header { position: sticky; top: 0; z-index: 1000; background: rgba(10,10,10,0.9); backdrop-filter: saturate(140%) blur(6px); border-bottom: 1px solid #1a1a1a; }
 .header__inner { display: flex; align-items: center; justify-content: space-between; padding: 14px 0; }
@@ -780,6 +890,14 @@ h4 { font-size: clamp(1.25rem, 2.5vw, 1.75rem); font-weight: 500; }
   .topbar__right { gap: 6px; }
   .topbar .btn-logo { padding: 3px; }
   .topbar .btn-logo__image { height: 28px; width: 28px; }
+  /* New Year Banner tablet adjustments */
+  .newyear-banner__content {
+    gap: 14px;
+    padding: 15px 18px;
+  }
+  .newyear-banner__icon {
+    font-size: 30px;
+  }
 }
 
 /* Small phones */
@@ -799,6 +917,22 @@ h4 { font-size: clamp(1.25rem, 2.5vw, 1.75rem); font-weight: 500; }
   .topbar__right { flex-wrap: wrap; gap: 6px; }
   .topbar .btn-logo { padding: 3px; }
   .topbar .btn-logo__image { height: 26px; width: 26px; }
+  /* New Year Banner mobile adjustments */
+  .newyear-banner__content {
+    flex-direction: column;
+    gap: 12px;
+    padding: 14px 16px;
+  }
+  .newyear-banner__icon {
+    font-size: 28px;
+  }
+  .newyear-banner__details {
+    flex-direction: column;
+    gap: 8px;
+  }
+  .newyear-banner__divider {
+    display: none;
+  }
   /* Center delivery buttons on mobile */
   .contact__delivery-buttons { justify-content: center; }
   /* Hero delivery mobile adjustments */

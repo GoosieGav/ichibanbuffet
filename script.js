@@ -1,3 +1,21 @@
+// New Year Banner - Show only on Dec 31 and Jan 1
+// To show the banner always, comment out the date check below
+const newYearBanner = document.getElementById('newyearBanner');
+if (newYearBanner) {
+  const today = new Date();
+  const month = today.getMonth(); // 0-11 (0 = January)
+  const date = today.getDate();
+  
+  // Show banner on December 31st (month 11, date 31) or January 1st (month 0, date 1)
+  // For now, showing always - uncomment the if statement and remove the display block to enable date check
+  newYearBanner.style.display = 'block';
+  // if ((month === 11 && date === 31) || (month === 0 && date === 1)) {
+  //   newYearBanner.style.display = 'block';
+  // } else {
+  //   newYearBanner.style.display = 'none';
+  // }
+}
+
 // Mobile nav toggle
 const navToggle = document.getElementById('navToggle');
 const navMenu = document.getElementById('navMenu');
