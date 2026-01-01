@@ -156,21 +156,6 @@ h4 { font-size: clamp(1.25rem, 2.5vw, 1.75rem); font-weight: 500; }
   z-index: 1;
 }
 
-.newyear-banner__icon {
-  font-size: 32px;
-  line-height: 1;
-  animation: bounce 2s ease-in-out infinite;
-}
-
-@keyframes bounce {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-5px);
-  }
-}
-
 .newyear-banner__text {
   display: flex;
   flex-direction: column;
@@ -895,9 +880,6 @@ h4 { font-size: clamp(1.25rem, 2.5vw, 1.75rem); font-weight: 500; }
     gap: 14px;
     padding: 15px 18px;
   }
-  .newyear-banner__icon {
-    font-size: 30px;
-  }
 }
 
 /* Small phones */
@@ -922,9 +904,6 @@ h4 { font-size: clamp(1.25rem, 2.5vw, 1.75rem); font-weight: 500; }
     flex-direction: column;
     gap: 12px;
     padding: 14px 16px;
-  }
-  .newyear-banner__icon {
-    font-size: 28px;
   }
   .newyear-banner__details {
     flex-direction: column;
