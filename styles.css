@@ -79,11 +79,6 @@ h4 { font-size: clamp(1.25rem, 2.5vw, 1.75rem); font-weight: 500; }
   background: rgba(255, 255, 255, 0.8);
 }
 
-.btn-logo--ubereats:hover {
-  border-color: rgba(0, 212, 170, 0.6);
-  background: rgba(255, 255, 255, 0.8);
-}
-
 .btn-logo--doordash:hover {
   border-color: rgba(255, 48, 8, 0.6);
   background: rgba(255, 255, 255, 0.8);
@@ -194,6 +189,10 @@ h4 { font-size: clamp(1.25rem, 2.5vw, 1.75rem); font-weight: 500; }
   color: #fff;
   font-weight: 700;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.newyear-banner__item--text {
+  display: block;
 }
 
 .newyear-banner__divider {
@@ -918,7 +917,7 @@ h4 { font-size: clamp(1.25rem, 2.5vw, 1.75rem); font-weight: 500; }
   .hero__delivery { margin-top: 20px; }
   .hero__delivery-text { font-size: 15px; text-align: center; }
   .hero__delivery-buttons { flex-direction: column; align-items: center; gap: 12px; }
-  .btn-logo--ubereats-hero, .btn-logo--doordash-hero { 
+  .btn-logo--doordash-hero { 
     width: 100%; 
     max-width: 200px; 
     padding: 14px; 
