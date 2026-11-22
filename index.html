@@ -5,13 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Ichiban Buffet • Springfield, MO</title>
     <meta name="description" content="All-you-can-eat buffet & à la carte Chinese restaurant in Springfield, MO. Fresh sushi bar, General Tso's chicken, crab rangoon & over 100 buffet items." />
-    <link rel="icon" href="assets/logo.png?v=2" />
+    <link rel="icon" type="image/png" href="images/favicon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css?v=2" />
   </head>
   <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
     <!-- Top contact bar -->
     <div class="topbar">
       <div class="container">
@@ -22,7 +23,7 @@
         </div>
         <div class="topbar__right">
           <a class="btn-logo btn-logo--doordash" href="https://www.doordash.com/store/ichiban-springfield-30943552/43036946/?srsltid=AfmBOopvsV5Pge7H-Jjjr4HYruxoVjJng0b3S1mMP1VKHnYzj8UOavPu" target="_blank" rel="noopener" aria-label="Order on DoorDash">
-            <img src="doordashlogo.png" alt="DoorDash" class="btn-logo__image">
+            <img src="images/doordash.webp" alt="DoorDash" class="btn-logo__image" width="120" height="120">
           </a>
         </div>
       </div>
@@ -48,7 +49,7 @@
     <header class="header" id="header">
       <div class="container header__inner">
         <a href="#home" class="brand" aria-label="Ichiban Buffet home">
-          <img src="assets/logo.png?v=2" alt="Ichiban Buffet logo" class="brand__logo" />
+          <img src="images/logo.webp" alt="Ichiban Buffet logo" class="brand__logo" width="1040" height="542" />
           <span class="brand__text">Ichiban Buffet</span>
         </a>
         <nav class="nav" id="primary-nav" aria-label="Primary navigation">
@@ -65,6 +66,7 @@
       </div>
     </header>
 
+    <main id="main">
     <!-- Hero -->
     <section class="hero" id="home" aria-label="Hero">
       <div class="hero__bg" aria-hidden="true"></div>
@@ -72,7 +74,7 @@
         <div class="hero__grid">
           <div class="hero__copy">
             <h1 class="hero__title">Welcome to</h1>
-            <img src="assets/logo.png?v=2" alt="Ichiban Buffet logo" class="hero__brand" />
+            <img src="images/logo.webp" alt="Ichiban Buffet logo" class="hero__brand" width="1040" height="542" fetchpriority="high" />
             <p class="hero__subtitle">All-you-can-eat restaurant with Japanese sushi, Chinese stir-fries & American comfort foods.</p>
             <div class="hero__actions">
               <a class="btn btn--primary btn--menu" href="#menu">Our Menu</a>
@@ -115,7 +117,7 @@
               </p>
             </div>
             <div class="visit__brand desktop-only">
-              <img src="ichian_building.png" alt="Ichiban Buffet building exterior" class="visit__image" />
+              <img src="images/ichian_building.webp" alt="Ichiban Buffet building exterior" class="visit__image" width="766" height="620" loading="lazy" decoding="async" />
             </div>
           </div>
         </div>
@@ -281,7 +283,7 @@
               "Great buffet with many options including crab legs. Would highly recommend this Chinese buffet for its great variety and taste."
             </p>
             <div class="review__source">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google" class="review__source-logo">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google" class="review__source-logo" loading="lazy" decoding="async">
               <span>Google Review</span>
             </div>
           </div>
@@ -300,7 +302,7 @@
               "The food was absolutely wonderful! I really appreciate how this buffet maintains the classic look and feel of a traditional Chinese buffet. I'd highly recommend this spot to anyone craving delicious Chinese food!"
             </p>
             <div class="review__source">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google" class="review__source-logo">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google" class="review__source-logo" loading="lazy" decoding="async">
               <span>Google Review</span>
             </div>
           </div>
@@ -319,7 +321,7 @@
               "The best asian buffet in town. All the items are solid in flavor. We had a great time there"
             </p>
             <div class="review__source">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google" class="review__source-logo">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google" class="review__source-logo" loading="lazy" decoding="async">
               <span>Google Review</span>
             </div>
           </div>
@@ -335,32 +337,32 @@
           <button class="gallery-nav gallery-nav--prev" id="galleryPrev" aria-label="Previous images">‹</button>
           <div class="gallery-carousel" id="galleryCarousel">
             <div class="gallery-track">
-              <div class="gallery__item" data-lightbox="gallery">
-                <img src="food_image.png" alt="Delicious Chinese cuisine from Ichiban Buffet" class="gallery__image">
+              <div class="gallery__item" data-lightbox="gallery" tabindex="0" role="button" aria-label="View larger photo: Delicious Chinese cuisine from Ichiban Buffet">
+                <img src="images/food_image.webp" alt="Delicious Chinese cuisine from Ichiban Buffet" class="gallery__image" width="900" height="1200" loading="lazy" decoding="async">
               </div>
-              <div class="gallery__item" data-lightbox="gallery">
-                <img src="crablegs.png" alt="Fresh crab legs at Ichiban Buffet" class="gallery__image">
+              <div class="gallery__item" data-lightbox="gallery" tabindex="0" role="button" aria-label="View larger photo: Fresh crab legs at Ichiban Buffet">
+                <img src="images/crablegs.webp" alt="Fresh crab legs at Ichiban Buffet" class="gallery__image" width="944" height="1200" loading="lazy" decoding="async">
               </div>
-              <div class="gallery__item" data-lightbox="gallery">
-                <img src="ichian_building.png" alt="Ichiban Buffet restaurant exterior" class="gallery__image">
+              <div class="gallery__item" data-lightbox="gallery" tabindex="0" role="button" aria-label="View larger photo: Ichiban Buffet restaurant exterior">
+                <img src="images/ichian_building.webp" alt="Ichiban Buffet restaurant exterior" class="gallery__image" width="766" height="620" loading="lazy" decoding="async">
               </div>
-              <div class="gallery__item" data-lightbox="gallery">
-                <img src="foodimage.png" alt="Variety of dishes at Ichiban Buffet" class="gallery__image">
+              <div class="gallery__item" data-lightbox="gallery" tabindex="0" role="button" aria-label="View larger photo: Variety of dishes at Ichiban Buffet">
+                <img src="images/foodimage.webp" alt="Variety of dishes at Ichiban Buffet" class="gallery__image" width="900" height="1200" loading="lazy" decoding="async">
               </div>
-              <div class="gallery__item" data-lightbox="gallery">
-                <img src="sushiBarimage.png" alt="Fresh sushi bar at Ichiban Buffet" class="gallery__image">
+              <div class="gallery__item" data-lightbox="gallery" tabindex="0" role="button" aria-label="View larger photo: Fresh sushi bar at Ichiban Buffet">
+                <img src="images/sushiBarimage.webp" alt="Fresh sushi bar at Ichiban Buffet" class="gallery__image" width="1000" height="746" loading="lazy" decoding="async">
               </div>
-              <div class="gallery__item" data-lightbox="gallery">
-                <img src="buffetbarimage.png" alt="Buffet bar with hot dishes" class="gallery__image">
+              <div class="gallery__item" data-lightbox="gallery" tabindex="0" role="button" aria-label="View larger photo: Buffet bar with hot dishes">
+                <img src="images/buffetbarimage.webp" alt="Buffet bar with hot dishes" class="gallery__image" width="1000" height="746" loading="lazy" decoding="async">
               </div>
-              <div class="gallery__item" data-lightbox="gallery">
-                <img src="restaurant_image.png" alt="Restaurant dining area" class="gallery__image">
+              <div class="gallery__item" data-lightbox="gallery" tabindex="0" role="button" aria-label="View larger photo: Restaurant dining area">
+                <img src="images/restaurant_image.webp" alt="Restaurant dining area" class="gallery__image" width="896" height="1200" loading="lazy" decoding="async">
               </div>
-              <div class="gallery__item" data-lightbox="gallery">
-                <img src="plate_image.png" alt="Beautifully plated dishes" class="gallery__image">
+              <div class="gallery__item" data-lightbox="gallery" tabindex="0" role="button" aria-label="View larger photo: Beautifully plated dishes">
+                <img src="images/plate_image.webp" alt="Beautifully plated dishes" class="gallery__image" width="1000" height="869" loading="lazy" decoding="async">
               </div>
-              <div class="gallery__item" data-lightbox="gallery">
-                <img src="broccoli.png" alt="Fresh vegetables and sides" class="gallery__image">
+              <div class="gallery__item" data-lightbox="gallery" tabindex="0" role="button" aria-label="View larger photo: Fresh vegetables and sides">
+                <img src="images/broccoli.webp" alt="Fresh vegetables and sides" class="gallery__image" width="900" height="1200" loading="lazy" decoding="async">
               </div>
             </div>
           </div>
@@ -370,7 +372,7 @@
     </section>
 
     <!-- Lightbox -->
-    <div class="lightbox" id="lightbox">
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer" aria-hidden="true">
       <div class="lightbox__overlay" id="lightboxOverlay"></div>
       <div class="lightbox__container">
         <img src="" alt="" class="lightbox__image" id="lightboxImage">
@@ -393,7 +395,7 @@
             <h4>Order Online:</h4>
             <div class="contact__delivery-buttons">
               <a class="btn-logo btn-logo--contact" href="https://www.doordash.com/store/ichiban-springfield-30943552/43036946/?srsltid=AfmBOopvsV5Pge7H-Jjjr4HYruxoVjJng0b3S1mMP1VKHnYzj8UOavPu" target="_blank" rel="noopener" aria-label="Order on DoorDash">
-                <img src="doordashlogo.png" alt="DoorDash" class="btn-logo__image">
+                <img src="images/doordash.webp" alt="DoorDash" class="btn-logo__image" width="120" height="120">
               </a>
             </div>
           </div>
@@ -404,6 +406,7 @@
         </div>
         <div class="card">
           <h3 class="card__title">Hours</h3>
+          <p class="hours__notice" data-hide-after="2026-11-27"><strong>Holiday hours:</strong> Closed Thursday, Nov 26 for Thanksgiving.</p>
           <ul class="hours" aria-label="Business hours">
             <li><span>Sunday</span><span>11 AM–9 PM</span></li>
             <li><span>Monday</span><span>11 AM–9 PM</span></li>
@@ -417,10 +420,12 @@
       </div>
     </section>
 
+    </main>
+
     <footer class="footer">
       <div class="container footer__inner">
         <div class="footer__brand">
-          <img src="assets/logo.png?v=2" alt="Ichiban Buffet" class="brand__logo brand__logo--small" />
+          <img src="images/logo.webp" alt="" class="brand__logo brand__logo--small" width="1040" height="542" loading="lazy" decoding="async" />
           <span>Ichiban Buffet • Springfield, MO</span>
         </div>
         <div>

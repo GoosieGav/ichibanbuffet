@@ -1,14 +1,12 @@
-// Holiday banner - hides automatically on/after the date in data-hide-after (YYYY-MM-DD, local time)
-const holidayBanner = document.getElementById('holidayBanner');
-if (holidayBanner) {
-  const hideAfter = holidayBanner.dataset.hideAfter;
-  if (hideAfter) {
-    const [y, m, d] = hideAfter.split('-').map(Number);
-    if (new Date() >= new Date(y, m - 1, d)) {
-      holidayBanner.style.display = 'none';
-    }
+// Time-limited notices (holiday banner, holiday hours): any element with
+// data-hide-after="YYYY-MM-DD" hides itself starting that day (visitor's local time)
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+document.querySelectorAll('[data-hide-after]').forEach((el) => {
+  const [y, m, d] = el.dataset.hideAfter.split('-').map(Number);
+  if (new Date() >= new Date(y, m - 1, d)) {
+    el.style.display = 'none';
   }
-}
+});
 
 // Mobile nav toggle
 const navToggle = document.getElementById('navToggle');
@@ -28,7 +26,7 @@ document.addEventListener('click', (e) => {
     const el = document.querySelector(target.hash);
     if (el) {
       e.preventDefault();
-      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      el.scrollIntoView({ behavior: prefersReducedMotion ? 'auto' : 'smooth', block: 'start' });
       navMenu?.classList.remove('show');
       navToggle?.setAttribute('aria-expanded', 'false');
     }
@@ -73,6 +71,12 @@ class GalleryCarousel {
     // Lightbox functionality
     this.galleryItems.forEach((item, index) => {
       item.addEventListener('click', () => this.openLightbox(index));
+      item.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          this.openLightbox(index);
+        }
+      });
     });
     
     this.lightboxClose?.addEventListener('click', () => this.closeLightbox());
@@ -93,6 +97,14 @@ class GalleryCarousel {
           case 'ArrowRight':
             this.nextImage();
             break;
+          case 'Tab': {
+            const controls = [this.lightboxClose, this.lightboxPrev, this.lightboxNext].filter(Boolean);
+            const i = controls.indexOf(document.activeElement);
+            e.preventDefault();
+            const next = e.shiftKey ? (i <= 0 ? controls.length - 1 : i - 1) : (i + 1) % controls.length;
+            controls[next].focus();
+            break;
+          }
         }
       }
     });
@@ -148,6 +160,11 @@ class GalleryCarousel {
   
   
   smoothScrollTo(targetPosition) {
+    if (prefersReducedMotion) {
+      this.carousel.scrollLeft = targetPosition;
+      this.isAnimating = false;
+      return;
+    }
     const startPosition = this.carousel.scrollLeft;
     const distance = targetPosition - startPosition;
     
@@ -192,14 +209,20 @@ class GalleryCarousel {
     if (this.lightboxImage && img) {
       this.lightboxImage.src = img.src;
       this.lightboxImage.alt = img.alt;
+      this.lastFocused = document.activeElement;
       this.lightbox?.classList.add('active');
+      this.lightbox?.setAttribute('aria-hidden', 'false');
       document.body.style.overflow = 'hidden';
+      this.lightboxClose?.focus();
     }
   }
   
   closeLightbox() {
-    this.lightbox?.classList.remove('active');
+    if (!this.lightbox?.classList.contains('active')) return;
+    this.lightbox.classList.remove('active');
+    this.lightbox.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
+    this.lastFocused?.focus();
   }
   
   nextImage() {
@@ -256,6 +279,5 @@ class GalleryCarousel {
 // Initialize carousel and lightbox when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
   new GalleryCarousel();
-  new GalleryLightbox();
 });
 
