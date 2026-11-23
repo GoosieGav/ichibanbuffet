@@ -126,7 +126,8 @@ address { font-style: normal; margin-top: .75rem; }
 .footer { background: var(--dark); color: #fff9f1; }
 .footer-inner { padding-block: 1.2rem; flex-wrap: wrap; }
 .footer-inner small { color: #ddcfc5; }
-.footer-inner > a:last-child { margin-left: auto; padding: .55rem 0; }
+.footer-links { display: flex; flex-wrap: wrap; align-items: center; gap: 0 1.1rem; margin-left: auto; }
+.footer-links a { display: inline-flex; align-items: center; gap: .3em; min-height: 44px; }
 
 @media (max-width: 54rem) {
   .header-inner { flex-wrap: wrap; gap: .55rem 1rem; padding-block: .5rem; min-height: 3.75rem; }
@@ -172,6 +173,7 @@ address { font-style: normal; margin-top: .75rem; }
   .gallery-track { grid-auto-columns: 82%; --gap: .75rem; }
   .contact-grid .exterior { grid-row: auto; max-height: 14rem; }
   .footer-inner { gap: .5rem 1rem; }
+  .footer-links { margin-left: 0; }
   .footer .brand { font-size: 1.05rem; }
   .footer-inner small { order: 1; width: 100%; }
   thead th { font-size: .75rem; }
