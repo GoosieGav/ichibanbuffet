@@ -1,3 +1,13 @@
+const heroLogo = document.querySelector('#restaurant-name img');
+if (heroLogo) {
+  const startLogoEntrance = () => heroLogo.classList.add('logo-ready');
+  if (heroLogo.complete && heroLogo.naturalWidth > 0) {
+    startLogoEntrance();
+  } else {
+    heroLogo.addEventListener('load', startLogoEntrance, { once: true });
+  }
+}
+
 // Expire dated notices at the restaurant's midnight, including for visitors traveling.
 const restaurantDate = new Intl.DateTimeFormat('sv-SE', {
   timeZone: 'America/Chicago', year: 'numeric', month: '2-digit', day: '2-digit'
