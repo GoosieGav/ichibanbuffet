@@ -1,6 +1,6 @@
 # Ichiban Buffet – Restaurant Website
 
-A modern, responsive static website for Ichiban Buffet, a Chinese buffet restaurant in Springfield, MO. Features a sleek red & black design with interactive gallery, mobile-optimized delivery integration, and comprehensive restaurant information.
+A modern, responsive static website for Ichiban Buffet, a Chinese buffet restaurant in Springfield, MO. Visitors can compare buffet prices, browse photos, and find directions, hours, and DoorDash ordering.
 
 ## 🍽️ Website Features
 
@@ -14,25 +14,25 @@ A modern, responsive static website for Ichiban Buffet, a Chinese buffet restaur
 - **Image carousel** with touch/swipe support for mobile devices
 - **Lightbox functionality** for full-screen image viewing
 - **Keyboard navigation** (arrow keys, escape)
-- **Touch gestures** for mobile users
-- **Auto-play carousel** with manual controls
+- **Native horizontal scrolling** and manual previous/next controls
+- **Direct photo links** work with JavaScript disabled
 
 ### **Delivery Integration**
-- **Uber Eats** and **DoorDash** integration with branded buttons
+- **DoorDash** ordering from the header and contact section
 - **Mobile-optimized** delivery buttons with proper sizing
 - **Direct ordering links** to delivery platforms
 - **Responsive design** for all device sizes
 
 ### **Customer Reviews**
-- **Google Reviews integration** with authentic customer feedback
+- **Selected Google reviews** included in the page HTML
 - **Star ratings** and review text display
 - **Professional styling** matching restaurant branding
 - **Mobile-responsive** review cards
 
 ### **Modern Design**
-- **Red & black color scheme** inspired by restaurant branding
-- **Professional typography** with Playfair Display and Inter fonts
-- **Smooth animations** and hover effects
+- **Burgundy and cream palette** with the restaurant’s blue and red logo
+- **Local serif and sans-serif fonts**
+- **Reduced-motion support** for gallery navigation
 - **Mobile-first responsive design**
 - **Accessibility features** with proper ARIA labels
 
@@ -52,10 +52,9 @@ A modern, responsive static website for Ichiban Buffet, a Chinese buffet restaur
 - **Mobile Optimization** - Touch-friendly interfaces
 
 ### **JavaScript Features**
-- **Intersection Observer API** - Efficient scroll-based animations
-- **Touch Event Handling** - Mobile gesture support
-- **Event Delegation** - Optimized event handling
-- **Modular Class Structure** - Organized, maintainable code
+- Native modal photo viewer with keyboard controls and focus restoration
+- Mobile navigation disclosure with native fragment links
+- Holiday notices expire using Springfield’s Central time zone
 
 ### **Performance Optimizations**
 - **Lightweight** - No external dependencies or frameworks
@@ -70,6 +69,8 @@ ichiban-buffet/
 ├── index.html              # Main HTML file
 ├── styles.css              # Complete CSS styling
 ├── script.js               # JavaScript functionality
+├── vercel.json             # Production HTTP security headers
+├── images/                 # WebP photos, site logo, and favicon
 ├── assets/
 │   └── logo.png            # Restaurant logo
 ├── ubereatslogo.png        # Uber Eats branding
@@ -89,44 +90,46 @@ ichiban-buffet/
 ## 🎨 Design System
 
 ### **Color Palette**
-- **Primary Red**: `#e11b22` - Restaurant brand color
-- **Brand Blue**: `#20a6ff` - Accent color for links and hover states
-- **Background**: `#0b0b0b` - Deep black for contrast
-- **Surface**: `#151515` - Slightly lighter for cards and sections
-- **Text**: `#f3f3f3` - High contrast white text
+- **Action color** `--wine` (#881f30)
+- **Background** `--paper` (#fcf9f4)
+- **Text** `--ink` (#241c19)
 
 ### **Typography**
-- **Headings**: Playfair Display (serif) for elegant restaurant feel
-- **Body Text**: Inter (sans-serif) for readability
+- **Headings**: Georgia and local serif fallbacks
+- **Body Text**: Locally available Inter or the system sans-serif
 - **Responsive Sizing**: Fluid typography with clamp() functions
 
 ### **Layout Features**
 - **Container Max Width**: 1200px with responsive padding
 - **Grid Systems**: CSS Grid for complex layouts
 - **Flexbox**: For component-level layouts
-- **Mobile Breakpoints**: 640px, 768px, 960px, 1200px
+- **Mobile Breakpoints**: 38rem and 54rem
 
 ## 📱 Responsive Design
 
-### **Mobile (≤640px)**
+### **Small screens (up to 38rem)**
 - Single column layouts
 - Touch-optimized buttons
 - Stacked navigation
 - Optimized image sizes
 
-### **Tablet (641px - 960px)**
+### **Mid-sized screens (38rem to 54rem)**
 - Two-column layouts where appropriate
 - Medium-sized touch targets
 - Balanced spacing
 
-### **Desktop (≥961px)**
+### **Wide screens (above 54rem)**
 - Full multi-column layouts
 - Hover effects and interactions
 - Optimal use of screen real estate
 
 ## 🚀 Deployment Options
 
-### **Static Hosting (Recommended)**
+### Production security
+
+The production site uses Vercel. `vercel.json` applies the Content Security Policy and other response headers across the site. Scripts, styles, and images load from the site’s own origin. Maps and DoorDash are outbound links. If hosting changes, configure equivalent headers on the new host.
+
+### **Static Hosting Options**
 - **GitHub Pages** - Free hosting with custom domain
 - **Netlify** - Advanced features with form handling
 - **Vercel** - Fast global CDN
@@ -155,22 +158,21 @@ php -S localhost:8000
 Update CSS custom properties in `styles.css`:
 ```css
 :root {
-  --color-primary: #e11b22;    /* Main brand color */
-  --color-brand-blue: #20a6ff; /* Accent color */
-  --color-bg: #0b0b0b;         /* Background */
-  --color-text: #f3f3f3;       /* Text color */
+  --wine: #881f30;   /* Primary actions */
+  --paper: #fcf9f4;  /* Page background */
+  --ink: #241c19;    /* Body text */
 }
 ```
 
 ### **Content Updates**
 - **Menu Items**: Edit HTML in `index.html`
-- **Images**: Replace files in project root
+- **Images**: Update display assets in `images/`
 - **Contact Info**: Update phone/address in HTML
-- **Hours**: Modify in the contact section
+- **Hours**: Update the visit strip, contact section, and Restaurant structured data together
 
 ### **Adding Features**
 - **New Sections**: Add HTML and corresponding CSS
-- **JavaScript**: Extend existing classes or add new ones
+- **JavaScript**: Update navigation, photo controls, or holiday notices in `script.js`
 - **Animations**: Use CSS transitions and transforms
 
 ## 📊 SEO & Performance
@@ -181,16 +183,14 @@ Update CSS custom properties in `styles.css`:
 - **Semantic HTML**: Proper heading hierarchy
 - **Alt Text**: Descriptive image alt attributes
 
-### **Performance Metrics**
-- **Lighthouse Score**: 90+ across all categories
-- **Core Web Vitals**: Optimized for Google ranking
-- **Mobile Performance**: Fast loading on all devices
-- **Accessibility**: WCAG compliant design
+### **Loading behavior**
+- Browsers select a buffet photo size for the hero using `srcset`.
+- Gallery thumbnails and the exterior photo load lazily.
 
 ## 🎯 Business Features
 
 ### **Customer Acquisition**
-- **Delivery Integration**: Direct links to Uber Eats and DoorDash
+- **Delivery Integration**: Direct links to DoorDash
 - **Contact Information**: Clickable phone and address
 - **Menu Display**: Complete pricing and item listings
 - **Visual Appeal**: High-quality food photography
