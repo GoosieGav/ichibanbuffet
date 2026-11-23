@@ -30,7 +30,7 @@ A modern, responsive static website for Ichiban Buffet, a Chinese buffet restaur
 - **Mobile-responsive** review cards
 
 ### **Modern Design**
-- **Burgundy and cream palette** with the restaurant’s blue and red logo
+- **Muted red and blue palette** drawn from the restaurant logo
 - **Local serif and sans-serif fonts**
 - **Reduced-motion support** for gallery navigation
 - **Mobile-first responsive design**
@@ -90,9 +90,11 @@ ichiban-buffet/
 ## 🎨 Design System
 
 ### **Color Palette**
-- **Action color** `--wine` (#881f30)
-- **Background** `--paper` (#fcf9f4)
-- **Text** `--ink` (#241c19)
+- **Primary actions** `--red` (#a53640)
+- **Links and secondary controls** `--blue` (#315e7c)
+- **Hero and footer** `--dark` (#152d42)
+- **Background** `--paper` (#fbfaf7)
+- **Text** `--ink` (#203448)
 
 ### **Typography**
 - **Headings**: Georgia and local serif fallbacks
@@ -158,9 +160,9 @@ php -S localhost:8000
 Update CSS custom properties in `styles.css`:
 ```css
 :root {
-  --wine: #881f30;   /* Primary actions */
-  --paper: #fcf9f4;  /* Page background */
-  --ink: #241c19;    /* Body text */
+  --red: #a53640;   /* Primary actions */
+  --paper: #fbfaf7;  /* Page background */
+  --ink: #203448;    /* Body text */
 }
 ```
 
